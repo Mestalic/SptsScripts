@@ -1,0 +1,87 @@
+if game.PlaceId ~= 2202352383 then
+    return
+end
+while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
+    not game:GetService("Players").LocalPlayer.PlayerGui do
+    wait()
+end
+_G.FF = true
+local UIS = game:GetService("UserInputService")
+
+UIS.InputBegan:Connect(
+    function(input, isTyping)
+        if isTyping then
+            return
+        elseif input.KeyCode == Enum.KeyCode.F5 then
+            while _G.FF do
+                task.wait()
+                game.Lighting.Blur.Enabled = false
+                game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+                game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+                game.Players.LocalPlayer.Character.ForceField:remove()
+            end
+        end
+    end
+)
+
+UIS.InputBegan:Connect(
+    function(input, isTyping)
+        if isTyping then
+            return
+        elseif input.KeyCode == Enum.KeyCode.F6 then
+            _G.FF = false
+        end
+    end
+)
+
+UIS.InputBegan:Connect(
+    function(input, isTyping)
+        if isTyping then
+            return
+        elseif input.KeyCode == Enum.KeyCode.F1 then
+            pcall(
+                function()
+                    local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+                    game.Lighting.Blur.Enabled = false
+                    game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+                    game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+                    game.Players.LocalPlayer.Character:remove()
+                    task.wait()
+                    game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                    task.wait(1.5)
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                    task.wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                    task.wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                end
+            )
+        end
+    end
+)
+
+while task.wait() do
+    game.Lighting.Blur.Enabled = false
+    game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+    game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+    pcall(
+        function()
+            if
+                game.Players.LocalPlayer.Character.Humanoid.Health <
+                    game.Players.LocalPlayer.Character.Humanoid.MaxHealth * 0.8
+             then
+                local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+
+                game.Players.LocalPlayer.Character:Destroy()
+                task.wait()
+                game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                task.wait(1.5)
+                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                task.wait()
+                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                task.wait()
+                game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+            end
+        end
+    )
+end
