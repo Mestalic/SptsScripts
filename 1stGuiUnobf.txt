@@ -4,9 +4,7 @@ wait()
 until game:IsLoaded()
 wait(0.2)
 
-local plr = game:GetService("Players").LocalPlayer
-if plr:IsInGroup("12871140") then
-wait()
+
 --This script reveals ALL hidden messages in the default chat
 --chat "/spy" to toggle!
 enabled = true
@@ -4902,4 +4900,8 @@ end)
 game:GetService("Players").PlayerRemoving:Connect(function(wholeft)
 	PlayerLeft(" "..wholeft.Name.." just left what a pussy😂")
 end)
+local plr = game:GetService("Players").LocalPlayer
+if plr:IsInGroup("12871140") then
+    print"gg"
+    else
     plr:Kick("You aren't allowed to use this you monkey🐵🌈")
