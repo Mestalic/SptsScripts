@@ -110,7 +110,6 @@ function lbmove()
 end
 
 lbmove()
-end
 wait()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 task.wait()
@@ -4905,3 +4904,4 @@ if plr:IsInGroup("12871140") then
     print"gg"
     else
     plr:Kick("You aren't allowed to use this you monkey🐵🌈")
+    end
