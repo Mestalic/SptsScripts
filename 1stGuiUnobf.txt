@@ -4516,14 +4516,14 @@ TextButton_28.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_28.Position = UDim2.new(0.557667315, 0, 0.345365077, 0)
 TextButton_28.Size = UDim2.new(0, 221, 0, 67)
 TextButton_28.Font = Enum.Font.SpecialElite
-TextButton_28.Text = "No Void"
+TextButton_28.Text = "Split"
 TextButton_28.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_28.TextSize = 14.000
 
 
 TextButton_28.MouseButton1Click:Connect(function()
 
-game.Players.LocalPlayer.Character.RightHand:Destroy()
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
 end)
 
 UICorner_30.Parent = TextButton_28
