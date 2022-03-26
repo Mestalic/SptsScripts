@@ -4,6 +4,263 @@
 -- Instances:
 local plr = game:GetService("Players").LocalPlayer
 if plr:IsInGroup("12871140") then
+    
+    repeat
+wait()
+until game:IsLoaded()
+wait(0.1)
+--This script reveals ALL hidden messages in the default chat
+--chat "/spy" to toggle!
+enabled = true
+--if true will check your messages too
+spyOnMyself = false
+--if true will chat the logs publicly (fun, risky)
+public = false
+--if true will use /me to stand out
+publicItalics = true
+--customize private logs
+privateProperties = {
+	Color = Color3.fromRGB(153,51,255); 
+	Font = Enum.Font.SourceSansBold;
+	TextSize = 20;
+}
+--////////////////////////////////////////////////////////////////
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local instance = (_G.chatSpyInstance or 0) + 1
+_G.chatSpyInstance = instance
+
+local function onChatted(p,msg)
+	if _G.chatSpyInstance == instance then
+		if p==player and msg:lower():sub(1,4)=="/spy" then
+			enabled = not enabled
+			wait(0.3)
+			privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+			StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+		elseif enabled and (spyOnMyself==false or p~=player) then
+			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+			local hidden = true
+			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+					hidden = false
+				end
+			end)
+			wait(2)
+			conn:Disconnect()
+			if hidden and enabled then
+				if public then
+					saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+				else
+					privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+				end
+			end
+		end
+	end
+end
+
+for _,p in ipairs(Players:GetPlayers()) do
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end
+Players.PlayerAdded:Connect(function(p)
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end)
+privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+local chatFrame = player.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible = true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+task.wait()
+
+
+--[[----------------------------------------------------------------
+|                _�____   _��_ _�_  _���__   _��_  _�_             |
+|               � �    � �  � �  � � _�   � �    �   �             |
+|              � �      �  �    � � �    � �     �_�               |
+|                �        �    �    �    �      _� �               |
+|               _�____� _�   _�    _�____�     �  _�               |
+|              �     �  �    �    �     �    _�  _�                |
+|              �        �    �    �         �    �                 |
+|               �        �    �    �         �    �                |
+|------------------------------------------------------------------|
+|    Credits:    | Binds & Info:                                   |
+|    pigeon#1818 | U                         Open and close output |
+|        hz#4777 | RShift                          Fill suggestion |
+|     Curvn#2646 | ;                               Focus on CMDBar |
+| -------------- | Q                                Open and close |
+|                | LShift+Bksp                        Clear CMDbar |
+|                |                                                 |
+|                | .cmds                             List commands |
+----------------------------------------------------------------]]--
+repeat
+    wait()
+    until game:IsLoaded()
+    wait(0.1)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+task.wait()
+repeat
+wait()
+until game:IsLoaded()
+wait(0.1)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+task.wait()
+repeat
+wait()
+until game:IsLoaded()
+    wait(0.1)
+    if game.PlaceId == 2202352383 then
+
+if not game.Players.LocalPlayer.Character then
+    game.Players.LocalPlayer.CharacterAdded:Wait()
+    game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+end
+
+wait(0.1)
+
+function lbmove()
+    game:GetService("Workspace").Main.FistStrengthLeaderBoardPart.CFrame = CFrame.new(361.965332, 253.75, 828, 0.0146785369, 6.25027567e-08, 0.999892235, 6.04237371e-08, 1, -6.339652e-08, -0.999892235, 6.13477908e-08, 0.0146785369)
+    game:GetService("Workspace").Main.BodyToughnessLeaderBoardPart.CFrame = CFrame.new(361.965332, 253.75, 806, 0.0146785369, 6.25027567e-08, 0.999892235, 6.04237371e-08, 1, -6.339652e-08, -0.999892235, 6.13477908e-08, 0.0146785369)
+    game:GetService("Workspace").Main.TotalPowerLeaderBoardPart.CFrame = CFrame.new(361.965332, 253.75, 784, 0.0146785369, 6.25027567e-08, 0.999892235, 6.04237371e-08, 1, -6.339652e-08, -0.999892235, 6.13477908e-08, 0.0146785369)
+    game:GetService("Workspace").Main.SuperHeroREPLeaderBoardPart.CFrame = CFrame.new(361.965332, 253.75, 762, 0.0146785369, 6.25027567e-08, 0.999892235, 6.04237371e-08, 1, -6.339652e-08, -0.999892235, 6.13477908e-08, 0.0146785369)
+    game:GetService("Workspace").Main.SuperVillainREPLeaderBoardPart.CFrame = CFrame.new(361.965332, 253.75, 740, 0.0146785369, 6.25027567e-08, 0.999892235, 6.04237371e-08, 1, -6.339652e-08, -0.999892235, 6.13477908e-08, 0.0146785369)
+end
+
+lbmove()
+end
+task.wait()
+repeat
+wait()
+until game:IsLoaded()
+wait(0.1)
+for i,v in pairs(game.CoreGui:WaitForChild("RobloxGui"):GetChildren()) do
+    if v.Name == "TimeTracker" then
+        v:Destroy()
+    end
+end
+
+local TimeTracker = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextButton")
+local Hidden = Instance.new("TextButton")
+local UICorner2 = Instance.new("UICorner")
+
+TimeTracker.Name = "TimeTracker"
+TimeTracker.Parent = game.CoreGui:WaitForChild("RobloxGui")
+TimeTracker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TimeTracker.DisplayOrder = 2147483645
+
+Frame.Parent = TimeTracker
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 0.800
+Frame.Position = UDim2.new(0.445, 0, 0, 0)
+Frame.Size = UDim2.new(0.116904959, 0, 0.0650793612, 0)
+
+UICorner.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(1, 0, 1.00000012, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "0"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Hidden.Parent = Frame
+Hidden.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Hidden.BackgroundTransparency = 1.000
+Hidden.Size = UDim2.new(1, 0, 1.00000012, 0)
+Hidden.Font = Enum.Font.SourceSans
+Hidden.Text = "Left Mouse = Cancel\nRight Mouse = Clear"
+Hidden.TextColor3 = Color3.fromRGB(0, 0, 0)
+Hidden.TextScaled = true
+Hidden.TextSize = 14.000
+Hidden.TextWrapped = true
+Hidden.Visible = false
+
+UICorner2.Parent = Hidden
+
+-- spawn(function()
+-- while wait() do
+-- local TimeInUnix = math.floor(elapsedTime())
+-- local stringToFormat = "%H:%M:%S"
+-- local result = os.date(stringToFormat, TimeInUnix)
+
+-- TextLabel.Text = result
+-- end
+-- end)
+
+local Days = 0
+local Hours = 0
+local Minutes = 0
+local Seconds = 0
+
+local Change = coroutine.create(function()
+    while true do
+        if Days ~= 0 then TextLabel.Text = Days ..":".. Hours ..":".. Minutes ..":".. Seconds 
+        elseif Days == 0 and Hours ~= 0 then TextLabel.Text = Hours ..":".. Minutes ..":".. Seconds
+        elseif Days == 0 and Hours == 0 and Minutes ~= 0 then TextLabel.Text = Minutes ..":".. Seconds
+        elseif Days == 0 and Hours == 0 and Minutes == 0 then TextLabel.Text = Seconds
+        end
+
+        Seconds = Seconds + 1
+        if Hours == 24 then Days = Days + 1; Hours = 0 end
+        if Minutes == 60 then Hours = Hours + 1; Minutes = 0 end
+        if Seconds == 60 then Minutes = Minutes + 1; Seconds = 0 end
+        wait(1)
+    end
+end)
+
+coroutine.resume(Change)
+
+----------------------------------------------------
+TextLabel.MouseButton1Click:Connect(function()
+    TextLabel.TextTransparency = 0.6
+    Hidden.Visible = true
+end)
+
+Hidden.MouseButton2Click:Connect(function()
+     Days = 0
+     Hours = 0
+     Minutes = 0
+     Seconds = 0
+    Hidden.Visible = false
+    TextLabel.TextTransparency = 0
+end)
+
+Hidden.MouseButton1Click:Connect(function()
+    Hidden.Visible = false
+    TextLabel.TextTransparency = 0
+end)
+
+--ElapsedTime()
+
+-- local time = time or tick or (os and os.time) or warn("Couldn't find time function")
+--     local shitploit = false
+--     if not shared or type(shared) ~= "table" then
+--         shitploit = true
+--         warn("Please consider buying Synapse.\nOr Use Pepsi Swarm Lite")
+--         warn("Krnl also, sometimes works.")
+--         shared = {has_shitploit = true}
+--         if getgenv then -- Who has getgenv, but not shared?
+--             getgenv().shared = {has_shitploit = true}
+--         end
+--         if getfenv then -- Some really reallllly bad exploits have shared envrionments...
+--             getfenv().shared = {has_shitploit = true}
+--         end
+--     elseif shared.has_shitploit then
+--         shitploit = true
+--     end
+
+--     local OsTime = assert(workspace:WaitForChild("OsTime", 5), "OsTime Missing!")
+--     local current_time = time()
+task.wait()
 local ScreenGui = Instance.new("ScreenGui")
 local MainGui = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
