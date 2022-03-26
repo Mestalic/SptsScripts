@@ -3,8 +3,9 @@ repeat
 wait()
 until game:IsLoaded()
 wait(0.2)
--- Gui to Lua
--- Version: 3.2
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+wait()
 
 -- Instances:
 local plr = game:GetService("Players").LocalPlayer
@@ -4840,12 +4841,6 @@ repeat
     until game:IsLoaded()
     wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
-wait()
-repeat
-wait()
-until game:IsLoaded()
-wait(0)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 wait()
 repeat
 wait()
