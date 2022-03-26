@@ -4,7 +4,7 @@ _G.toggle = false
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
 local X = Material.Load({
-    Title = "Void:\n(made by 1xToxsins#8515)\n major credits to Corey#7787 for helping",
+    Title = "Void:\n(made by 1xToxsins#8515)\n Fixed and better? By Mestalic#0001",
     Style = 6,
     SizeX = 280,
     SizeY = 140,
