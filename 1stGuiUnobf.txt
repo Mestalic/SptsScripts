@@ -3,6 +3,10 @@ repeat
 wait()
 until game:IsLoaded()
 wait(0.2)
+
+local plr = game:GetService("Players").LocalPlayer
+if plr:IsInGroup("12871140") then
+wait()
 --This script reveals ALL hidden messages in the default chat
 --chat "/spy" to toggle!
 enabled = true
@@ -111,12 +115,9 @@ lbmove()
 end
 wait()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-wait()
+task.wait()
 
 -- Instances:
-local plr = game:GetService("Players").LocalPlayer
-if plr:IsInGroup("12871140") then
-wait()
 local TimeTracker = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
