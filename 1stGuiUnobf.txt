@@ -1242,38 +1242,24 @@ TextButton_13.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_13.Position = UDim2.new(0.734906137, 0, 0.205575883, 0)
 TextButton_13.Size = UDim2.new(0, 252, 0, 67)
 TextButton_13.Font = Enum.Font.SpecialElite
-TextButton_13.Text = "CMD-X"
+TextButton_13.Text = "EarRape"
 TextButton_13.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_13.TextSize = 14.000
 
 TextButton_13.MouseButton1Click:Connect(function()
     
     
-
---[[----------------------------------------------------------------
-|                _ ____   _  _ _ _  _   __   _  _  _ _             |
-|                                    _                             |
-|                                                 _                |
-|                                               _                  |
-|               _ ____  _    _     _ ____         _                |
-|                                            _   _                 |
-|                                                                  |
-|                                                                  |
-|------------------------------------------------------------------|
-|    Credits:    | Binds & Info:                                   |
-|    pigeon#1818 | U                         Open and close output |
-|        hz#4777 | RShift                          Fill suggestion |
-|     Curvn#2646 | ;                               Focus on CMDBar |
-| -------------- | Q                                Open and close |
-|                | LShift+Bksp                        Clear CMDbar |
-|                |                                                 |
-|                | .cmds                             List commands |
-----------------------------------------------------------------]]--
-repeat
-    wait()
-    until game:IsLoaded()
-    wait(0.1)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+while wait(0.2) do
+for _,plr in pairs(game.Players:GetPlayers()) do
+pcall(function()
+for _,obj in pairs(plr.Character.Head:GetChildren()) do
+if obj:IsA("Sound") then
+obj:Play()
+end
+end
+end)
+end
+end
 end)
 
 UICorner_15.Parent = TextButton_13
@@ -1283,17 +1269,27 @@ TextButton_14.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_14.Position = UDim2.new(0.734906137, 0, 0.330213547, 0)
 TextButton_14.Size = UDim2.new(0, 252, 0, 67)
 TextButton_14.Font = Enum.Font.SpecialElite
-TextButton_14.Text = "YIFF"
+TextButton_14.Text = "Bike Beep"
 TextButton_14.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_14.TextSize = 14.000
 
 TextButton_14.MouseButton1Click:Connect(function()
     
-    repeat
-wait()
-until game:IsLoaded()
-wait(0.1)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+_G.lPS = true
+while _G.lPS do
+    task.wait()
+for i,v in pairs(game.Players:GetPlayers()) do
+    pcall(function()
+local children = v.Character.Rotorcycle.Handle:GetChildren()
+for i, child in ipairs(children) do
+    if child.ClassName == "Sound" then
+    child.Playing = true
+    child.Looped = false
+    end
+end
+end)
+end
+end
 end)
 
 UICorner_16.Parent = TextButton_14
