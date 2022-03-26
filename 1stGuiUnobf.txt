@@ -8,7 +8,7 @@ if plr:IsInGroup("12871140") then
     repeat
 wait()
 until game:IsLoaded()
-wait(0.1)
+wait(0)
 --This script reveals ALL hidden messages in the default chat
 --chat "/spy" to toggle!
 enabled = true
@@ -98,7 +98,7 @@ task.wait()
 repeat
     wait()
     until game:IsLoaded()
-    wait(0.1)
+    wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 task.wait()
 while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
@@ -127,7 +127,7 @@ end
 
 
 game:GetService("Players").PlayerAdded:Connect(function(whojoined)
-	PlayerJoined(" "..whojoined.Name.." Just joined the server🏳️‍🌈")
+	PlayerJoined(" "..whojoined.Name.." Just joined the server🌈")
 end)
 
 game:GetService("Players").PlayerRemoving:Connect(function(wholeft)
@@ -138,7 +138,7 @@ task.wait()
 repeat
 wait()
 until game:IsLoaded()
-wait(0.1)
+wait(0)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 task.wait()
 repeat
