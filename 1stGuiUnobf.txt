@@ -4902,7 +4902,4 @@ end)
 game:GetService("Players").PlayerRemoving:Connect(function(wholeft)
 	PlayerLeft(" "..wholeft.Name.." just left what a pussy😂")
 end)
-
-	    else
     plr:Kick("You aren't allowed to use this you monkey🐵🌈")
-end
