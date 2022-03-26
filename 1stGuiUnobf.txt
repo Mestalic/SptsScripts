@@ -206,7 +206,7 @@ TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_2.Position = UDim2.new(0.0569259971, 0, 0.450677961, 0)
 TextButton_2.Size = UDim2.new(0, 252, 0, 67)
 TextButton_2.Font = Enum.Font.SpecialElite
-TextButton_2.Text = "Voider"
+TextButton_2.Text = "Voider (F6)"
 TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.TextSize = 14.000
 
