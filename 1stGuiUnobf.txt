@@ -4500,13 +4500,62 @@ TextButton_27.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_27.Position = UDim2.new(0.0408762693, 0, 0.341577202, 0)
 TextButton_27.Size = UDim2.new(0, 221, 0, 67)
 TextButton_27.Font = Enum.Font.SpecialElite
-TextButton_27.Text = "Server Hop"
+TextButton_27.Text = "Anti Chat Logs"
 TextButton_27.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_27.TextSize = 14.000
 
 TextButton_27.MouseButton1Click:Connect(function()
     
-    game:GetService("TeleportService"):Teleport(game.PlaceId)
+  while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
+    not game:GetService("Players").LocalPlayer.PlayerGui do
+    wait()
+end
+
+if game.Players.LocalPlayer.Name == "Allah" then
+    print("not executed")
+else
+    local mt = getrawmetatable(game)
+    local old = mt.__namecall
+    setreadonly(mt, false)
+
+    mt.__namecall =
+        newcclosure(
+        function(self, ...)
+            local args = {...}
+            local method = getnamecallmethod()
+
+            if method == "Fire" and self.Name == "MessagePosted" then
+                return wait(9e9)
+            end
+
+            return old(self, ...)
+        end
+    )
+
+    local CloneFunction = clonefunction
+    local CheckCaller = CloneFunction(checkcaller)
+    local HookFunction = CloneFunction(hookfunction)
+    local LocalPlayer = game.Players.PlayerAdded:wait()
+
+    local PostMessage =
+        require(
+        LocalPlayer:WaitForChild("PlayerScripts", 1 / 0):WaitForChild("ChatScript", 1 / 0):WaitForChild(
+            "ChatMain",
+            1 / 0
+        )
+    ).MessagePosted
+    getgenv().MessageEvent = Instance.new("BindableEvent")
+
+    local OldFunctionHook
+    local PostMessageHook = function(self, msg)
+        if not CheckCaller() and self == PostMessage then
+            MessageEvent:Fire(msg)
+            return
+        end
+        return OldFunctionHook(self, msg)
+    end
+    OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+end
     end)
 
 UICorner_29.Parent = TextButton_27
@@ -4516,14 +4565,14 @@ TextButton_28.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_28.Position = UDim2.new(0.557667315, 0, 0.345365077, 0)
 TextButton_28.Size = UDim2.new(0, 221, 0, 67)
 TextButton_28.Font = Enum.Font.SpecialElite
-TextButton_28.Text = "Split"
+TextButton_28.Text = "No Void"
 TextButton_28.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_28.TextSize = 14.000
 
 
 TextButton_28.MouseButton1Click:Connect(function()
 
-game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+game.Players.LocalPlayer.Character.RightHand:Destroy()
 end)
 
 UICorner_30.Parent = TextButton_28
