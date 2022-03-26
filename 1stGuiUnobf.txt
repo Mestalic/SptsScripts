@@ -2,7 +2,7 @@
 repeat
 wait()
 until game:IsLoaded()
-wait(0.2)
+wait(0.6)
 
 
 --This script reveals ALL hidden messages in the default chat
