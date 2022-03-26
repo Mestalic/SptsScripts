@@ -78,7 +78,7 @@ StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
 local chatFrame = player.PlayerGui.Chat.Frame
 chatFrame.ChatChannelParentFrame.Visible = true
 chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
-task.wait()
+wait()
 
 
 --[[----------------------------------------------------------------
@@ -105,13 +105,13 @@ repeat
     until game:IsLoaded()
     wait(0)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
-task.wait()
+wait()
 repeat
 wait()
 until game:IsLoaded()
 wait(0)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-task.wait()
+wait()
 repeat
 wait()
 until game:IsLoaded()
@@ -135,7 +135,7 @@ end
 
 lbmove()
 end
-task.wait()
+wait()
 repeat
 wait()
 until game:IsLoaded()
