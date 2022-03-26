@@ -1350,14 +1350,14 @@ TextButton_17.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_17.Position = UDim2.new(0.734906137, 0, 0.679488897, 0)
 TextButton_17.Size = UDim2.new(0, 252, 0, 67)
 TextButton_17.Font = Enum.Font.SpecialElite
-TextButton_17.Text = "4XR"
+TextButton_17.Text = "YukiiX V4"
 TextButton_17.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_17.TextSize = 14.000
 
 TextButton_17.MouseButton1Click:Connect(function()
 
 wait(0.1)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/SPTS%203", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1ArcX/SPTS-Custom/main/Yukii%20X", true))()
 end)
 
 UICorner_19.Parent = TextButton_17
