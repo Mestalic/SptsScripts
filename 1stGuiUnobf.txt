@@ -5,8 +5,7 @@ until game:IsLoaded()
 wait(0.6)
 local plr = game:GetService("Players").LocalPlayer
 if plr:IsInGroup("12871140") then
-    print"gg"
-wait()
+wait(1)
 --This script reveals ALL hidden messages in the default chat
 --chat "/spy" to toggle!
 enabled = true
