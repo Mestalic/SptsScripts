@@ -4640,7 +4640,7 @@ UICorner_31.Parent = TextButton_29
             MainGui.Visible = false
         end
     end)
-    wait(0.1)
+    wait(0.5)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     wait()
 
