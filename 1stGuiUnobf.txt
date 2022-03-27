@@ -1,6 +1,9 @@
 -- Gui to Lua
 -- Version: 3.2
-
+repeat
+wait()
+until game:IsLoaded()
+wait(0.5)
 -- Instances:
 local plr = game:GetService("Players").LocalPlayer
 if plr:IsInGroup("12871140") then
