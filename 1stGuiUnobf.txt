@@ -939,7 +939,7 @@ TextButton_16.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_16.Position = UDim2.new(0.734906137, 0, 0.450503409, 0)
 TextButton_16.Size = UDim2.new(0, 252, 0, 67)
 TextButton_16.Font = Enum.Font.SpecialElite
-TextButton_16.Text = "Reset"
+TextButton_16.Text = "Reset (F3)"
 TextButton_16.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_16.TextSize = 14.000
 
@@ -947,16 +947,31 @@ TextButton_16.MouseButton1Click:Connect(function()
 
 
 wait(0.2)
-local SavePosition = Instance.new("TextLabel")
-local Imput = game:GetService("UserInputService")
-Imput.InputBegan:connect(
-    function(inst)
-        if inst.KeyCode == Enum.KeyCode.F2 then
-            game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
-            game.Lighting.Blur.Enabled = false
-            game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
-            game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
-          
+_G.FF = true
+local UIS = game:GetService("UserInputService")
+
+UIS.InputBegan:Connect(
+    function(input, isTyping)
+        if isTyping then
+            return
+        elseif input.KeyCode == Enum.KeyCode.F3 then
+            pcall(
+                function()
+                    local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+                    game.Lighting.Blur.Enabled = false
+                    game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+                    game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+                    task.wait()
+                    game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                    task.wait()
+                    wait(2.5)
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                    task.wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                    task.wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                end
+            )
         end
     end
 )
