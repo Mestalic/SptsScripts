@@ -1393,7 +1393,7 @@ local backwards = Instance.new("ImageButton")
 local forward2 = Instance.new("ImageButton")
 local OpVoid = Instance.new("TextButton")
 local InvisLoop = Instance.new("TextButton")
-local Novoid = Instance.new("TextButton")
+local Split = Instance.new("TextButton")
 local DarkMode = Instance.new("TextButton")
 local TrainFist = Instance.new("TextButton")
 local MainFrame3 = Instance.new("Frame")
@@ -1691,7 +1691,7 @@ InvisLoop.Text = "Invis Loop"
 InvisLoop.TextColor3 = Color3.fromRGB(0, 255, 255)
 InvisLoop.TextSize = 14.000
 
-Novoid.Name = "Novoid"
+Novoid.Name = "Split"
 Novoid.Parent = MainFrame2
 Novoid.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Novoid.BorderColor3 = Color3.fromRGB(74, 74, 74)
@@ -1699,7 +1699,7 @@ Novoid.BorderSizePixel = 7
 Novoid.Position = UDim2.new(0.130659848, 0, 0.471092075, 0)
 Novoid.Size = UDim2.new(0, 572, 0, 50)
 Novoid.Font = Enum.Font.SciFi
-Novoid.Text = "Novoid"
+Novoid.Text = "Split"
 Novoid.TextColor3 = Color3.fromRGB(0, 255, 255)
 Novoid.TextSize = 14.000
 
@@ -2046,16 +2046,11 @@ local function APDKN_fake_script() -- InvisLoop.Invis Loop
 end
 coroutine.wrap(APDKN_fake_script)()
 local function KEWMN_fake_script() -- Novoid.novoidscript 
-	local script = Instance.new('LocalScript', Novoid)
+	local script = Instance.new('LocalScript', Split)
 
 	script.Parent.MouseButton1Down:Connect(function()
-		for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
-			if v.Name == "RightHand" or v.Name == "LeftHand" then
-				v:Destroy()
-			end
-		end
-	end)
-end
+game.Players.LocalPlayer.Character.UpperTorso.Waist:remove()
+end)
 coroutine.wrap(KEWMN_fake_script)()
 local function QDAPE_fake_script() -- DarkMode.Darkmode script 
 	local script = Instance.new('LocalScript', DarkMode)
