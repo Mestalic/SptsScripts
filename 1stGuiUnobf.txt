@@ -675,7 +675,7 @@ while _G.on == 1 do
     local Arguments = {
         [1] = {
             [1] = "Skill_SpherePunch",
-            [2] = Vector3.new(-808.782837, 250.059631, 749.671082)
+            [2] = Vector3.new(0, 250059631, 0)
         }
     }
 
