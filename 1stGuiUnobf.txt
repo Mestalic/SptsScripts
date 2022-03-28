@@ -675,7 +675,7 @@ while _G.on == 1 do
     local Arguments = {
         [1] = {
             [1] = "Skill_SpherePunch",
-            [2] = Vector3.new(0, 250059631, 0)
+            [2] = Vector3.new(-808.782837, 250.059631, 749.671082)
         }
     }
 
@@ -930,7 +930,7 @@ TextButton_16.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 TextButton_16.Position = UDim2.new(0.734906137, 0, 0.450503409, 0)
 TextButton_16.Size = UDim2.new(0, 252, 0, 67)
 TextButton_16.Font = Enum.Font.SpecialElite
-TextButton_16.Text = "Gay Map🤮🌈"
+TextButton_16.Text = "Inverted Colors Map"
 TextButton_16.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_16.TextSize = 14.000
 
