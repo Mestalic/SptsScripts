@@ -858,7 +858,7 @@ TextButton_13.TextSize = 14.000
 
 TextButton_13.MouseButton1Click:Connect(function()
     
-    while wait(0.2) do
+    while wait(1.2) do
 for _,plr in pairs(game.Players:GetPlayers()) do
 pcall(function()
 for _,obj in pairs(plr.Character.Head:GetChildren()) do
