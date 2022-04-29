@@ -102,6 +102,7 @@ MainGui.BackgroundTransparency = 0.300
 MainGui.BorderColor3 = Color3.fromRGB(0, 255, 127)
 MainGui.Position = UDim2.new(0.0239708181, 0, 0.129868776, 0)
 MainGui.Size = UDim2.new(0, 1208, 0, 690)
+MainGui.Visible = false
 
 TextLabel.Parent = MainGui
 TextLabel.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
