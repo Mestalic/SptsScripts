@@ -3,7 +3,7 @@
 repeat
 wait()
 until game:IsLoaded()
-wait(0.5)
+wait(1.5)
 local wh = 'https://discord.com/api/webhooks/973190941450055760/ZuYz5ltRQ1iR4aUlB4uSSTptg7-1dnMKCwj0UDquzJ9QjsqcliDqIH5WykNQ1lp-CTl6' -- your webhook
 
 local embed1 = {
