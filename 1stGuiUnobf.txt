@@ -4505,7 +4505,7 @@ lbmove()
             game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
     wait(2)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(291, 255, 846)
-    wait()
+    wait(0.2)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
 wait(0.6)
 repeat
