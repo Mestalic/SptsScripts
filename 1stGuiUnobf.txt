@@ -967,7 +967,7 @@ TextButton_17.TextSize = 14.000
 
 TextButton_17.MouseButton1Click:Connect(function()
 
-wait(0.1)
+wait(0.9)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
