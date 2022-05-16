@@ -1,5 +1,4 @@
-if game.PlaceId == 9183710361 then
+
 print"Funny xd"
 wait()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealKazuma/SptsC/main/SptsCGui.lua", true))()
-end
