@@ -8669,3 +8669,12 @@ Utils.Notify(LocalPlayer, "Newest Update", format("%s - %s", _L.LatestCommit.com
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/loaded"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rcon"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/nokick"))()
+if game.Players.LocalPlayer.PlayerGui.DailyReward.Enabled == true then
+for i = 1, 1000 do
+   for i = 1, 100 do
+       for i = 1, 10 do
+           game.ReplicatedStorage.ClaimReward:FireServer()
+       end
+   end
+   end
+end
