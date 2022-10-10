@@ -4955,6 +4955,7 @@ AddCommand("unspin", {}, "unspins your character", {}, function(Caller, Args)
 end)
 
 AddCommand("goto", {"to"}, "teleports yourself to the other character", {3, "1"}, function(Caller, Args)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
     local Target = GetPlayer(Args[1]);
     local Delay = tonumber(Args[2]);
     for i, v in next, Target do
