@@ -3394,7 +3394,7 @@ wait(0.7)
         end
     ]], tostring(OldPos)));
     local TeleportService = Services.TeleportService
-    queue_on_teleport(readfile("fates-admin/tooldupe.lua"));
+    
     TeleportService.TeleportToPlaceInstance(TeleportService, game.PlaceId, game.JobId);
 end)
 
