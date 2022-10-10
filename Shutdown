@@ -1,2 +1,2 @@
-    wait(2)
+
 game:shutdown()
