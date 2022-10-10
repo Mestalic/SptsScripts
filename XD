@@ -4308,6 +4308,12 @@ end)
 
 AddCommand("nologs", {}, "Removes ur chats from roblox so can say what u want wioth no ban", {}, function()
 
+    local args = {
+    [1] = "Bye Bye Roblox ;-)",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
     not game:GetService("Players").LocalPlayer.PlayerGui do
     wait()
@@ -4358,13 +4364,8 @@ else
     end
     OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
 end
-task.wait(0.5)
-    local args = {
-    [1] = "Now i can finally swear^_^",
-    [2] = "All"
-}
 
-game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
 
 end)
 
@@ -5450,7 +5451,7 @@ end)
 
 AddCommand("advertise", {}, "advertises the script", {}, function()
     local ChatRemote = Services.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
-    ChatRemote.FireServer(ChatRemote, "Im Using MestHub And You Shold 2!!!", "All");
+    ChatRemote.FireServer(ChatRemote, "Im Using MestHub And You Should 2!!!", "All");
 end)
 
 AddCommand("joinserver", {"discord"}, "joins the fates admin discord server", {}, function()
