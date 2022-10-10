@@ -3332,7 +3332,7 @@ AddCommand("dupetools2", {"rejoindupe", "dupe2"}, "sometimes a faster dupetools"
     end
     local Root, Humanoid = GetRoot(), GetHumanoid();
     local OldPos = Root.CFrame
-    Root.CFrame = CFrameNew(0, 2e5, 0);
+    Root.CFrame = CFrameNew(991111, 2e5, 1230);
     UnequipTools(Humanoid);
 
     local Tools = filter(GetChildren(LocalPlayer.Backpack), function(i, v)
@@ -3344,6 +3344,7 @@ wait(0.7)
         v.Parent = Char
         v.Parent = Workspace
     end
+    task.wait()
     writefile("fates-admin/tooldupe.txt", tostring(Amount - 1));
     writefile("fates-admin/tooldupe.lua", format([[
         local OldPos = CFrame.new(%s);
@@ -3379,12 +3380,13 @@ wait(0.7)
             repeat wait() RootPart.CFrame = OldPos until RootPart.CFrame == OldPos
             getgenv().F_A.PluginLibrary.ExecuteCommand("dp", {"1"}, LocalPlayer);
         else
-            RootPart.CFrame = CFrame.new(0, 2e5, 0);
+            RootPart.CFrame = CFrame.new(576470, 2e5, 523430);
             wait(.8);
             for i, v in next, GetChildren(LocalPlayer.Backpack) do
                 v.Parent = Char
                 v.Parent = Workspace
             end
+	    task.wait()
             writefile("fates-admin/tooldupe.txt", tostring(DupeAmount - 1));
             local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport
             queue_on_teleport(readfile("fates-admin/tooldupe.lua"));
