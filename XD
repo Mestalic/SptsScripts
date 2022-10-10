@@ -4309,7 +4309,7 @@ end)
 
 AddCommand("safezone", {}, "Safe Zone", {}, function()
 game.Players.LocalPlayer.Character.Humanoid.Jump = true
-game.Players.LocalPlayer.Character.Head = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+game.Players.LocalPlayer.Character.HumanoidRootPart = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 
 end)
 
