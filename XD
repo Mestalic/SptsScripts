@@ -11,6 +11,7 @@ end
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/loaded"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rcon"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/nokick"))()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5529.3726, 32.0002, -17110.0762, 0.9993, 0, 0.0378, 0, 1, 0, -0.0378, 0, 0.9993)
 local _L = {}
 
 _L.start = start or tick();
