@@ -3947,7 +3947,7 @@ AddCommand("fling2", {"stan2"}, "another variant of fling", {}, function(Caller,
     Root.CFrame = OldPos
 end)
 
-AddCommand("antitkill", {}, "anti tkill :troll:", {3}, function(Caller, Args)
+AddCommand("antikill", {}, "anti tkill :troll:", {3}, function(Caller, Args)
     Destroy(GetCharacter()["Right Arm"]);
     return "lol"
 end)
