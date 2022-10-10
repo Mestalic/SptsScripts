@@ -4307,6 +4307,13 @@ AddCommand("unforceplay", {}, "stops forceplay", {}, function()
 end)
 
 
+AddCommand("sz", {}, "Safe Zone", {}, function()
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
+game.Players.LocalPlayer.Character.Head = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+
+end)
+
+
 AddCommand("nologs", {}, "Removes ur chats from roblox so can say what u want wioth no ban", {}, function()
 
     local args = {
