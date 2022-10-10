@@ -11,6 +11,7 @@ end
 
 		game.Players.LocalPlayer.CharacterAdded:Wait()
 				game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5529.3726, 32.0002, -17110.0762, 0.9993, 0, 0.0378, 0, 1, 0, -0.0378, 0, 0.9993)
 
 local _L = {}
 
@@ -6541,7 +6542,7 @@ AddCommand("deletetools", {"deltools"}, "delets all of your tools in your invent
     end
     return "deleted all tools"
 end)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5529.3726, 32.0002, -17110.0762, 0.9993, 0, 0.0378, 0, 1, 0, -0.0378, 0, 0.9993)
+
 AddCommand("rejoinre", {"rjb"}, "rejoins and tps you to your old position", {3}, function()
     local Pos = GetRoot().CFrame
     local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport
