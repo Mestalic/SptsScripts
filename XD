@@ -4358,7 +4358,7 @@ else
     end
     OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
 end
-task.wait(0.1)
+task.wait(0.5)
     local args = {
     [1] = "Now i can finally swear^_^",
     [2] = "All"
