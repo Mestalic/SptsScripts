@@ -9,8 +9,7 @@ if (not game.IsLoaded(game)) then
     Loaded.Wait(Loaded);
 end
 
-		game.Players.LocalPlayer.CharacterAdded:Wait()
-				game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5529.3726, 32.0002, -17110.0762, 0.9993, 0, 0.0378, 0, 1, 0, -0.0378, 0, 0.9993)
 
 local _L = {}
