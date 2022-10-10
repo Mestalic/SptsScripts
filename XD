@@ -3332,7 +3332,7 @@ AddCommand("dupetools2", {"rejoindupe", "dupe2"}, "sometimes a faster dupetools"
     end
     local Root, Humanoid = GetRoot(), GetHumanoid();
     local OldPos = Root.CFrame
-    Root.CFrame = CFrameNew(991111, 999*999, 1230);
+    Root.CFrame = CFrameNew(991111, 9999*9999, 1230);
     UnequipTools(Humanoid);
 
     local Tools = filter(GetChildren(LocalPlayer.Backpack), function(i, v)
@@ -3380,7 +3380,7 @@ wait(0.7)
             repeat wait() RootPart.CFrame = OldPos until RootPart.CFrame == OldPos
             getgenv().F_A.PluginLibrary.ExecuteCommand("dp", {"1"}, LocalPlayer);
         else
-            RootPart.CFrame = CFrame.new(576470, 999*999, 523430);
+            RootPart.CFrame = CFrame.new(576470, 9999*9999, 523430);
             wait(.8);
             for i, v in next, GetChildren(LocalPlayer.Backpack) do
                 v.Parent = Char
