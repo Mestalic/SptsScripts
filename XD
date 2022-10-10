@@ -4310,7 +4310,7 @@ end)
 AddCommand("nologs", {}, "Removes ur chats from roblox so can say what u want wioth no ban", {}, function()
 
     local args = {
-    [1] = "Bye Bye Roblox ;-)",
+    [1] = "Finally now i can swear in peace ;-)",
     [2] = "All"
 }
 
