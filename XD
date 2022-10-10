@@ -2755,6 +2755,12 @@ AddCommand("kill", {"tkill"}, "kills someone", {"1", 1, 3}, function(Caller, Arg
     WaitForChild(Character, "HumanoidRootPart").CFrame = OldPos
 end)
 
+AddCommand("serverlist", {"servers"}, "closes roblox", {3}, function()
+
+loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/ServerList.txt"))();
+
+end)
+
 AddCommand("shutdown", {"exit"}, "closes roblox", {3}, function()
 local args = {
     [1] = "Cya losers",
