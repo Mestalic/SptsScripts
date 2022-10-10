@@ -2755,7 +2755,7 @@ AddCommand("kill", {"tkill"}, "kills someone", {"1", 1, 3}, function(Caller, Arg
     WaitForChild(Character, "HumanoidRootPart").CFrame = OldPos
 end)
 
-AddCommand("shutdown", {}, "exits the game", {1, "1"}, function(Caller, Args)
+AddCommand("shutdown", "exits the game", {1, "1"}, function(Caller, Args)
 local args = {
     [1] = "Cya losers",
     [2] = "All"
