@@ -2,4 +2,4 @@ if game.Players.LocalPlayer.Name == "Mestalic" then
 return
 end
 
-rconsoleprint("MestHub>You")
+rconsoleprint("Haha you cant close me")
