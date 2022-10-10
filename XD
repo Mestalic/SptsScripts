@@ -4652,7 +4652,7 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     return "character refreshed"
 end)
 
-AddCommand("antifing", {}, "Cant get flung", {}, function(Caller, Args)
+AddCommand("antifling", {}, "Cant get flung", {}, function(Caller, Args)
 
 -- // Constants \\ --
 -- [ Services ] --
