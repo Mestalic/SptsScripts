@@ -3338,7 +3338,7 @@ AddCommand("dupetools2", {"rejoindupe", "dupe2"}, "sometimes a faster dupetools"
     local Tools = filter(GetChildren(LocalPlayer.Backpack), function(i, v)
         return IsA(v, "Tool");
     end)
-wait(1)
+wait(0.7)
     local Char, Workspace, ReplicatedStorage = GetCharacter(), Services.Workspace, Services.ReplicatedStorage
     for i, v in next, Tools do
         v.Parent = Char
