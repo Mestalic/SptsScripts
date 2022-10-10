@@ -4359,8 +4359,12 @@ else
     OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
 end
 task.wait(0.1)
-    local ChatRemote = Services.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
-    ChatRemote.FireServer(ChatRemote, "now i can finally swear :troll:", "All");
+    local args = {
+    [1] = "Now i can finally swear^_^",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
 end)
 
