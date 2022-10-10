@@ -5663,7 +5663,7 @@ end)
 AddCommand("reloadscript", {}, "kills the script and reloads it", {}, function(Caller)
     if (Caller == LocalPlayer) then
         ExecuteCommand("killscript", {}, LocalPlayer);
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Mestalic/SptsScripts/main/XD"))();
     end
 end)
 
