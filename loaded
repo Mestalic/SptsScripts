@@ -5,3 +5,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+if game.Players.LocalPlayer.Name == "Mestalic" then
+return
+end
+rconsoleprint("MestHub>You")
