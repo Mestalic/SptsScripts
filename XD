@@ -3332,7 +3332,7 @@ AddCommand("dupetools2", {"rejoindupe", "dupe2"}, "sometimes a faster dupetools"
     local Tools = filter(GetChildren(LocalPlayer.Backpack), function(i, v)
         return IsA(v, "Tool");
     end)
-
+wait(0.5)
     local Char, Workspace, ReplicatedStorage = GetCharacter(), Services.Workspace, Services.ReplicatedStorage
     for i, v in next, Tools do
         v.Parent = Char
@@ -3374,7 +3374,7 @@ AddCommand("dupetools2", {"rejoindupe", "dupe2"}, "sometimes a faster dupetools"
             getgenv().F_A.PluginLibrary.ExecuteCommand("dp", {"1"}, LocalPlayer);
         else
             RootPart.CFrame = CFrame.new(0, 2e5, 0);
-            wait(.5);
+            wait(.6);
             for i, v in next, GetChildren(LocalPlayer.Backpack) do
                 v.Parent = Char
                 v.Parent = Workspace
