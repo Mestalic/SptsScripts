@@ -1,4 +1,4 @@
-if game.Players.LocalPlayer.Name == "Mestalic" then
+if game.Players.LocalPlayer.Name == "Mestalic" or "Cubezon" then
 return
 end
 
