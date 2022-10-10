@@ -1,3 +1,9 @@
+if AlreadyLoaded == true then 
+return
+end
+
+AlreadyLoaded = true
+
 --[[
 	fates admin - 20/7/2022
 ]]
