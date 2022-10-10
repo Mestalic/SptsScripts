@@ -9,6 +9,7 @@ if (not game.IsLoaded(game)) then
     Loaded.Wait(Loaded);
 end
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/loaded"))()
+loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rcon"))()
 local _L = {}
 
 _L.start = start or tick();
