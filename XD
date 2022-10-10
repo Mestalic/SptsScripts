@@ -4314,6 +4314,11 @@ game.Players.LocalPlayer.Character.HumanoidRootPart = CFrame.new(5631.6548, 33.4
 
 end)
 
+AddCommand("nk", {}, "Unable to be kiled/voided if ur in r15", {}, function()
+
+game.Players.LocalPlayer.Character.RightHand:remove()
+
+end)
 
 AddCommand("nologs", {}, "Removes ur chats from roblox so can say what u want wioth no ban", {}, function()
 
