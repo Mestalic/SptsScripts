@@ -11,7 +11,6 @@ end
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/loaded"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rcon"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/nokick"))()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5529.3726, 32.0002, -17110.0762, 0.9993, 0, 0.0378, 0, 1, 0, -0.0378, 0, 0.9993)
 local _L = {}
 
 _L.start = start or tick();
@@ -8556,3 +8555,4 @@ end
 _L.LatestCommit = JSONDecode(Services.HttpService, game.HttpGetAsync(game, "https://api.github.com/repos/fatesc/fates-admin/commits?per_page=1&path=main.lua"))[1]
 wait(1);
 Utils.Notify(LocalPlayer, "Newest Update", format("%s - %s", _L.LatestCommit.commit.message, _L.LatestCommit.commit.author.name));
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5529.3726, 32.0002, -17110.0762, 0.9993, 0, 0.0378, 0, 1, 0, -0.0378, 0, 0.9993)
