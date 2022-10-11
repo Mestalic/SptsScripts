@@ -4373,6 +4373,16 @@ Lighting = game:GetService("Lighting")
 	end)
 end)
 
+AddCommand("noname", {}, "Remove ur name", {}, function()
+local speaker = game.Players.LocalPlayer
+	for i,v in pairs(speaker.Character:GetDescendants())do
+		if v:IsA("BillboardGui") or v:IsA("SurfaceGui") then
+			v:Destroy()
+		end
+	end
+end)
+
+
 AddCommand("safezone", {}, "Safe Zone", {}, function()
 game.Players.LocalPlayer.Character.Humanoid.Jump = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
