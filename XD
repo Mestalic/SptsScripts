@@ -4672,7 +4672,7 @@ end)
 AddCommand("antifling", {}, "Cant get flung", {}, function(Caller, Args)
 
 local args = {
-    [1] = "xdd nice try :-)",
+    [1] = "xdd nice try 😆",
     [2] = "All"
 }
 
