@@ -4411,24 +4411,24 @@ local function rm()
 end
 
 rm()
-wait(0.3)
+wait(0.53)
 Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
-wait(0.3)
+wait(0.53)
 
 rm()
-wait(0.3)
+wait(0.53)
 Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
-wait(0.3)
+wait(0.53)
 
 rm()
-wait(0.3)
+wait(0.53)
 Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
-wait(0.3)
+wait(0.53)
 
 rm()
-wait(0.3)
+wait(0.53)
 Humanoid:FindFirstChild("HeadScale"):Destroy()
-wait(0.3)
+wait(0.53)
 
 end)
 
