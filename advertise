@@ -1,3 +1,4 @@
+wait(0.3)
 if not _G.thingtosay then _G.thingtosay = "Idk what the name is yet lol" end
 wait() if not game:IsLoaded() then game.Loaded:Wait() end
 
