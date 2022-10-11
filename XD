@@ -3332,6 +3332,12 @@ AddCommand("dupetools", {"dp"}, "dupes your tools", {"1", 1, {"protect"}}, funct
     return format("successfully duped %d tool (s)", #GetChildren(LocalPlayer.Backpack) - ToolAmount);
 end)
 
+AddCommand("unlockfps", {}, "Removes the 60 fps cap on roblox (ONLY SYNAPSE)", {}, function()
+
+setfpscap(99999)
+
+end)
+
 AddCommand("dupetools2", {"rejoindupe", "dupe2"}, "sometimes a faster dupetools", {1,"1"}, function(Caller, Args)
     local Amount = tonumber(Args[1])
     if (not Amount) then
