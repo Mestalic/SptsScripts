@@ -5679,10 +5679,8 @@ AddCommand("unspamsilentchat", {"nospamsilentchat", "unspamchatlogs", "nospamcha
 end)
 
 AddCommand("advertise", {}, "advertises the script for 10 seconds", {}, function()
-loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/antichatlogs"))()
-task.wait()
 if not _G.thingtosay then _G.thingtosay = "Idk what the name is yet lol" end
-wait(5) if not game:IsLoaded() then game.Loaded:Wait() end
+wait() if not game:IsLoaded() then game.Loaded:Wait() end
 
 local lp = game.Players.LocalPlayer
 repeat wait() until lp and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
