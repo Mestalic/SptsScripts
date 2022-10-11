@@ -6593,6 +6593,12 @@ AddCommand("toggle", {"togglecommand", "togglecmd"}, "toggles a command with an 
     end
 end)
 
+AddCommand("infy", {"yiff"}, "infite yield", {3}, function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end)
+
 AddCommand("inviscam", {"inviscamera"}, "makes you see through walls more better", {}, function(Caller, Args, CEnv)
     CEnv.OldCameraMaxZoomDistance = LocalPlayer.CameraMaxZoomDistance
     CEnv.OldDevCameraOcclusionMode = LocalPlayer.DevCameraOcclusionMode
