@@ -5120,7 +5120,7 @@ AddCommand("goto", {"to"}, "teleports yourself to the other character", {3, "1"}
             ExecuteCommand("bring", {Caller.Name, v.Name}, LocalPlayer)
         else
 	game.Players.LocalPlayer.Character.Humanoid.Jump = true
-            GetRoot().CFrame = GetRoot(v).CFrame * CFrameNew(-5, 0, 0);
+            GetRoot().CFrame = GetRoot(v).CFrame;
         end
     end
 end)
