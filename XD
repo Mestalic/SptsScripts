@@ -2838,6 +2838,7 @@ AddCommand("kill2", {}, "another variant of kill", {1, "1"}, function(Caller, Ar
     end
     CWait(LocalPlayer.CharacterAdded);
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
+    game.Players.LocalPlayer.Character.ForceField:remove()
 end)
 
 AddCommand("loopkill", {}, "loopkill loopkills a character", {3,"1"}, function(Caller, Args, CEnv)
@@ -2953,6 +2954,7 @@ AddCommand("bring", {}, "brings a user", {1}, function(Caller, Args)
         Destroy(LocalPlayer.Character);
         CWait(LocalPlayer.CharacterAdded);
         WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
+	game.Players.LocalPlayer.Character.ForceField:remove()
     end
 end)
 
@@ -3022,6 +3024,7 @@ AddCommand("bring2", {}, "another variant of bring", {1, 3, "1"}, function(Calle
     end
     Character = CWait(LocalPlayer.CharacterAdded);
     WaitForChild(Character, "HumanoidRootPart").CFrame = OldPos
+    game.Players.LocalPlayer.Character.ForceField:remove()
 end)
 
 AddCommand("void", {"kill3"}, "voids a user", {1,"1"}, function(Caller, Args)
@@ -3091,6 +3094,7 @@ AddCommand("void", {"kill3"}, "voids a user", {1,"1"}, function(Caller, Args)
     Destroy(LocalPlayer.Character);
     CWait(LocalPlayer.CharacterAdded);
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
+    game.Players.LocalPlayer.Character.ForceField:remove()
 end)
 
 AddCommand("freefall", {}, "freefalls a user", {1,"1"}, function(Caller, Args)
@@ -4775,6 +4779,7 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     ReplaceHumanoid()
     CWait(LocalPlayer.CharacterAdded)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
+    game.Players.LocalPlayer.Character.ForceField:remove()
     return "character refreshed"
 end)
 
