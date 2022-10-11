@@ -4786,6 +4786,7 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     ReplaceHumanoid()
     CWait(LocalPlayer.CharacterAdded)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
+				game.Players.LocalPlayer.Character:WaitForChild("ForceField")
 if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
                                 game.Players.LocalPlayer.Character:FindFirstChild("ForceField"):Destroy()
     return "character refreshed"
