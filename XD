@@ -6593,7 +6593,7 @@ AddCommand("toggle", {"togglecommand", "togglecmd"}, "toggles a command with an 
     end
 end)
 
-AddCommand("infy", {"yiff"}, "infite yield", {3}, function()
+AddCommand("infy", {}, "infite yield",", {}, function()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
