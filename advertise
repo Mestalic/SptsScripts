@@ -1,9 +1,7 @@
 wait(0.3)
 if not _G.thingtosay then _G.thingtosay = "Idk what the name is yet lol" end
-wait() if not game:IsLoaded() then game.Loaded:Wait() end
 
 local lp = game.Players.LocalPlayer
-repeat wait() until lp and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
 local rservice = game:GetService("RunService")
 
 coroutine.resume(coroutine.create(function() while wait(1) do pcall(function() for _,z in next, game.Players:GetPlayers() do if z ~= lp then for _,v in next, z.Backpack:GetDescendants() do if v:IsA'Sound' then v.TimePosition = nil end end end end end) end end)) 
