@@ -4399,6 +4399,8 @@ AddCommand("tiny", {}, "Makes ur avatar tiny (use scale settings on lowest besid
 
 
 
+--Shit ass script made by failedmite57926
+
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Character = LocalPlayer.Character
 local Humanoid = Character:FindFirstChildOfClass("Humanoid")
@@ -4424,25 +4426,29 @@ local function rm()
 end
 
 rm()
-wait(0.53)
+
 Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
-wait(0.53)
 
+wait(0.21)
 rm()
-wait(0.53)
+
+if Humanoid:FindFirstChild("BodyWidthScale") then
 Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
-wait(0.53)
+wait(0.21)
 
 rm()
-wait(0.53)
+
+if Humanoid:FindFirstChild("BodyDepthScale") then
 Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
-wait(0.53)
 
+wait(0.21)
 rm()
-wait(0.53)
-Humanoid:FindFirstChild("HeadScale"):Destroy()
-wait(0.53)
 
+if Humanoid:FindFirstChild("HeadScale") then
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+end
+end
+end
 end)
 
 
