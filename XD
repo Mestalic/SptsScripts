@@ -2958,7 +2958,7 @@ AddCommand("bring", {}, "brings a user", {1}, function(Caller, Args)
         Destroy(LocalPlayer.Character);
         CWait(LocalPlayer.CharacterAdded);
         WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
-wait(0.1)
+wait(0.21)
 game.Players.LocalPlayer.Character.ForceField:Destroy()
     end
 end)
@@ -3029,7 +3029,7 @@ AddCommand("bring2", {}, "another variant of bring", {1, 3, "1"}, function(Calle
     end
     Character = CWait(LocalPlayer.CharacterAdded);
     WaitForChild(Character, "HumanoidRootPart").CFrame = OldPos
-wait(0.1)
+wait(0.2)
 game.Players.LocalPlayer.Character.ForceField:Destroy()
 end)
 
