@@ -4429,19 +4429,19 @@ rm()
 
 Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
 
-wait(0.21)
+wait(0.321)
 rm()
 
 if Humanoid:FindFirstChild("BodyWidthScale") then
 Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
-wait(0.21)
+wait(0.321)
 
 rm()
 
 if Humanoid:FindFirstChild("BodyDepthScale") then
 Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
 
-wait(0.21)
+wait(0.321)
 rm()
 
 if Humanoid:FindFirstChild("HeadScale") then
