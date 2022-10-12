@@ -1,4 +1,6 @@
 
+	
+	
 
 
 
@@ -4799,7 +4801,36 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
-
+local cmdp = game:GetService("Players")
+local cmdlp = cmdp.LocalPlayer
+if antifling == nil then 
+		antifling = true
+	else
+		antifling = not antifling
+	end
+	local function Collisionless(person)
+		if antifling and person.Character then
+			for _,child in pairs(person.Character:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide then
+					child.CanCollide = false
+				end
+			end
+		end
+	end
+	for _,v in pairs(cmdp:GetPlayers()) do
+		if v ~= cmdlp then
+			local antifling = game:GetService('RunService').Stepped:connect(function()
+				Collisionless(v)
+			end)
+		end
+	end
+	cmdp.PlayerAdded:Connect(function()
+		if v ~= cmdlp and antifling then
+			local antifling = game:GetService('RunService').Stepped:connect(function()
+				Collisionless(v)
+			end)
+		end
+	end)
 -- // Constants \\ --
 -- [ Services ] --
 local Services = setmetatable({}, {__index = function(Self, Index)
