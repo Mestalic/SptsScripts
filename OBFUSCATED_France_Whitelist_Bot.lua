@@ -2,7 +2,7 @@ _G.LengthOfFlinging = 60
 _G.ChatMessage = 'Get flung LOL😆 | Mestalic2007'
 _G.Whitelist = {
     508960114,
-    1,
+    2053921341,
     1,
     1,
     1,
