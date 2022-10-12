@@ -1,3 +1,4 @@
+setfpscap(10)
 _G.LengthOfFlinging = 60
 _G.ChatMessage = 'Get flung LOL😆Add 4 Whitelist | Mestalic2007'
 _G.Whitelist = {
