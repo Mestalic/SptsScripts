@@ -4445,6 +4445,36 @@ wait(0.53)
 
 end)
 
+
+AddCommand("r6", {}, "r6", {}, function()
+wait(1)
+
+ReplaceCharacter();
+    wait(Players.RespawnTime - 0.03);
+    local OldPos = GetRoot().CFrame
+    ReplaceHumanoid()
+    CWait(LocalPlayer.CharacterAdded)
+    WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
+wait(0.1)
+                                game.Players.LocalPlayer.Character.ForceField:Destroy()
+
+end)
+
+
+AddCommand("r15", {}, "r6", {}, function()
+wait(1)
+
+ReplaceCharacter();
+    wait(Players.RespawnTime - 0.03);
+    local OldPos = GetRoot().CFrame
+    ReplaceHumanoid()
+    CWait(LocalPlayer.CharacterAdded)
+    WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
+wait(0.1)
+                                game.Players.LocalPlayer.Character.ForceField:Destroy()
+
+end)
+
 AddCommand("safezone", {}, "Safe Zone", {}, function()
 game.Players.LocalPlayer.Character.Humanoid.Jump = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
