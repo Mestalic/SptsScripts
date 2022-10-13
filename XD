@@ -4488,6 +4488,49 @@ game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
 
 end)
 
+
+AddCommand("headless", {}, "Give u headless FE", {}, function()
+
+local lp = game:GetService "Players".LocalPlayer
+if lp.Character:FindFirstChild "Head" then
+    local char = lp.Character
+    char.Archivable = true
+    local new = char:Clone()
+    new.Parent = workspace
+    lp.Character = new
+    wait(2)
+    local oldhum = char:FindFirstChildWhichIsA "Humanoid"
+    local newhum = oldhum:Clone()
+    newhum.Parent = char
+    newhum.RequiresNeck = false
+    oldhum.Parent = nil
+    wait(2)
+    lp.Character = char
+    new:Destroy()
+    wait(1)
+    newhum:GetPropertyChangedSignal("Health"):Connect(
+        function()
+            if newhum.Health <= 0 then
+                oldhum.Parent = lp.Character
+                wait(1)
+                oldhum:Destroy()
+            end
+        end)
+    workspace.CurrentCamera.CameraSubject = char
+    if char:FindFirstChild "Animate" then
+        char.Animate.Disabled = true
+        wait(.1)
+        char.Animate.Disabled = false
+    end
+    lp.Character:FindFirstChild "Head":Destroy()
+end
+if simulationradius then
+game:GetService("RunService").Heartbeat:Connect(function()
+setsimulationradius(1/0,1/0)
+end) end
+
+end)
+
 AddCommand("safezone", {}, "Safe Zone", {}, function()
 game.Players.LocalPlayer.Character.Humanoid.Jump = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
