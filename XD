@@ -5785,6 +5785,13 @@ AddCommand("advertise", {}, "advertises the script then serverhops", {}, functio
     if (queue_on_teleport) then
         queue_on_teleport(format("game.Loaded:Wait();game:GetService('ReplicatedFirst'):SetDefaultLoadingGuiRemoved();local LocalPlayer = game:GetService('Players').LocalPlayer;LocalPlayer.CharacterAdded:Wait():WaitForChild('HumanoidRootPart').CFrame = CFrame.new(%s);loadstring(game.HttpGet(game, \"https://raw.githubusercontent.com/Mestalic/SptsScripts/main/advertise\"))()", tostring(Pos)));
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/antichatlogs"))()
+local args = {
+    [1] = "XD" ..
+        "\145\179\240\159\143\191\226\128\141\226\153\130\239\184\143",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
 end)
 
