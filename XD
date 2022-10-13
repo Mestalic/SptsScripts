@@ -5792,7 +5792,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
-
+end
 end)
 
 AddCommand("joinserver", {"discord"}, "joins the fates admin discord server", {}, function()
