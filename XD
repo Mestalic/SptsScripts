@@ -5792,6 +5792,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 end
 end)
 
