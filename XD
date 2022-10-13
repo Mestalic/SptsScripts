@@ -4479,6 +4479,15 @@ wait(0.31)
 
 end)
 
+AddCommand("valk", {}, "gets u a valk in dollhouse roleplay", {}, function()
+
+local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5628.4854, 53.7955, -17259.5547, -0.0024, 0, -1, 0, 1, 0, 1, 0, -0.0024)
+task.wait()
+game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+
+end)
+
 AddCommand("safezone", {}, "Safe Zone", {}, function()
 game.Players.LocalPlayer.Character.Humanoid.Jump = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
