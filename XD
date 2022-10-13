@@ -4483,7 +4483,6 @@ AddCommand("valk", {}, "gets u a valk in dollhouse roleplay", {}, function()
 
 local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5628.4854, 53.7955, -17259.5547, -0.0024, 0, -1, 0, 1, 0, 1, 0, -0.0024)
-task.wait()
 game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
 
 end)
