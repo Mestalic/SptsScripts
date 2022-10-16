@@ -4531,6 +4531,17 @@ end) end
 
 end)
 
+AddCommand("back", {}, "tps back if ur flinged", {}, function()
+TpBack = true
+shared.io = game:GetService('RunService').RenderStepped:Connect(function()
+if TpBack == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5533.8457, 32.1015, -17090.2715, 0.9981, 0, -0.061, 0, 1, 0, 0.061, 0, 0.9981)
+end
+end)
+wait(4)
+TpBack = false
+end)
+
 AddCommand("safezone", {}, "Safe Zone", {}, function()
 game.Players.LocalPlayer.Character.Humanoid.Jump = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
