@@ -4532,83 +4532,27 @@ end) end
 end)
 
 AddCommand("back", {}, "tps back if ur flinged", {}, function()
- CEnv[1] = tonumber(Args[1]) or GetConfig().FlySpeed or 2
-    local Speed = CEnv[1]
-    local Root = GetRoot();
-    local BodyGyro = InstanceNew("BodyGyro");
-    local BodyVelocity = InstanceNew("BodyVelocity");
-    local IdleAnim1 = "507766388"
-
-    local Character = GetCharacter();
-    local Animate = FindFirstChild(Character, "Animate");
-
-    if (Animate) then
-        CEnv.Animate = Animate
-        Animate.Disabled = true
-    end
-
-    SpoofInstance(Root, isR6() and Character.Torso or Character.UpperTorso);
-    ProtectInstance(BodyGyro);
-    ProtectInstance(BodyVelocity);
-    BodyGyro.Parent = Root
-    BodyVelocity.Parent = Root
-    BodyGyro.P = 9e9
-    BodyGyro.MaxTorque = Vector3New(1, 1, 1) * 9e9
-    BodyGyro.CFrame = Root.CFrame
-    BodyVelocity.MaxForce = Vector3New(1, 1, 1) * 9e9
-    BodyVelocity.Velocity = Vector3New(0, 0.1, 0);
-    local Humanoid = GetHumanoid();
-    for i, v in pairs(Humanoid:GetPlayingAnimationTracks()) do
-        v:Stop();
-    end
-    ChangeState(Humanoid, 8);
-    AddConnection(CConnect(Humanoid.StateChanged, function()
-        ChangeState(Humanoid, 8);
-        Humanoid.PlatformStand = false
-    end), CEnv)
-
-    local Table1 = { ['W'] = 0; ['A'] = 0; ['S'] = 0; ['D'] = 0 }
-
-    CThread(function()
-        while (next(LoadCommand("fly").CmdEnv) and wait()) do
-            Speed = LoadCommand("fly").CmdEnv[1]
-
-            Table1["W"] = Keys["W"] and Speed or 0
-            Table1["A"] = Keys["A"] and -Speed or 0
-            Table1["S"] = Keys["S"] and -Speed or 0
-            Table1["D"] = Keys["D"] and Speed or 0
-            if ((Table1["W"] + Table1["S"]) ~= 0 or (Table1["A"] + Table1["D"]) ~= 0) then
-                BodyVelocity.Velocity = ((Camera.CoordinateFrame.lookVector * (Table1["W"] + Table1["S"])) + ((Camera.CoordinateFrame * CFrameNew(Table1["A"] + Table1["D"], (Table1["W"] + Table1["S"]) * 0.2, 0).p) - Camera.CoordinateFrame.p)) * 50
-            else
-                BodyVelocity.Velocity = Vector3New(0, 0.1, 0);
-            end
-            BodyGyro.CFrame = Camera.CoordinateFrame
-        end
-    end)();
 TpBack = true
 shared.io = game:GetService('RunService').RenderStepped:Connect(function()
 if TpBack == true then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5533.8457, 32.1015, -17090.2715, 0.9981, 0, -0.061, 0, 1, 0, 0.061, 0, 0.9981)
 end
 end)
+    local BaseParts = filter(GetChildren(GetCharacter(v)), function(i, v)
+        return IsA(v, "BasePart");
+    end)
+    for i, v in next, BaseParts do
+        SpoofProperty(v, "Anchored");
+        v.Anchored = true
+    end
 wait(3)
- local FlyCEnv = LoadCommand("fly").CmdEnv
-    if (FlyCEnv.Animate) then
-        FlyCEnv.Animate.Disabled = false
-        FlyCEnv.Animate = nil
+    local BaseParts = filter(GetChildren(GetCharacter(v)), function(i, v)
+        return IsA(v, "BasePart");
+    end)
+    for i, v in next, BaseParts do
+        SpoofProperty(v, "Anchored");
+        v.Anchored = false
     end
-    DisableAllCmdConnections("fly");
-    table.clear(FlyCEnv);
-    LoadCommand("fly2").CmdEnv = {}
-    local Root = GetRoot();
-    local Instances = { ["BodyPosition"] = true, ["BodyGyro"] = true, ["BodyVelocity"] = true }
-    for i, v in next, GetChildren(Root) do
-        if (Instances[v.ClassName]) then
-            Destroy(v);
-        end
-    end
-    UnSpoofInstance(Root);
-    GetHumanoid().PlatformStand = false
     wait(1)
 TpBack = false
 end)
