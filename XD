@@ -4892,9 +4892,9 @@ end)
 
 AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     ReplaceCharacter();
-    wait(Players.RespawnTime - 0.01);
-    game.Players.LocalPlayer.Character:remove()
+    wait(Players.RespawnTime - 0.001);
     local OldPos = GetRoot().CFrame
+    game.Players.LocalPlayer.Character:remove()
     ReplaceHumanoid()
     CWait(LocalPlayer.CharacterAdded)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
