@@ -4913,7 +4913,13 @@ firetouchinterest(v.Handle, game.Players.LocalPlayer.Character.HumanoidRootPart,
 firetouchinterest(v.Handle, game.Players.LocalPlayer.Character.HumanoidRootPart, 1)
 end
 end
-wait(0.8)
+wait(0.3)
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait(0.3)
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait(0.3)
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
     return "character refreshed"
 end)
