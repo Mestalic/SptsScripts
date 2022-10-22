@@ -4895,7 +4895,7 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     wait(Players.RespawnTime);
     local OldPos = GetRoot().CFrame
     ReplaceHumanoid()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9845, 931434, -543)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 931434, 0)
     	for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 		v.Parent = game.Players.LocalPlayer.Character
 v.Parent = Workspace
