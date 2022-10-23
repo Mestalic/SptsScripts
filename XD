@@ -5869,8 +5869,6 @@ end)
 AddCommand("rejoin", {"rj"}, "rejoins the game you're currently in", {}, function(Caller)
     if (Caller == LocalPlayer) then
         local TeleportService = Services.TeleportService
-        if (#GetPlayers(Players) == 1) then
-            LocalPlayer:Kick();
 	    syn.queue_on_teleport([[
 game:GetService('ReplicatedFirst'):SetDefaultLoadingGuiRemoved()
 	]])
@@ -5883,7 +5881,7 @@ game:GetService('ReplicatedFirst'):SetDefaultLoadingGuiRemoved()
         end
         return "Rejoining..."
     end
-end)
+)
 
 AddCommand("serverhop", {"sh"}, "switches servers (optional: min, max (default: max))", {{"min", "max"}}, function(Caller, Args)
     if (Caller == LocalPlayer) then
