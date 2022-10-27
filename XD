@@ -4896,7 +4896,7 @@ end)
 
 AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     ReplaceCharacter();
-    wait(Players.RespawnTime);
+    wait(Players.RespawnTime + 0.2);
     local OldPos = GetRoot().CFrame
     ReplaceHumanoid()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 9999*9999, -9999*9999)
