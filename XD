@@ -8957,7 +8957,6 @@ Utils.Notify(LocalPlayer, "Newest Update", format("%s - %s", _L.LatestCommit.com
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/loaded"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rcon"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/nokick"))()
-return "refresh update"
 if game.Players.LocalPlayer.PlayerGui.DailyReward.Enabled == true then
 for i = 1, 1000 do
    for i = 1, 100 do
