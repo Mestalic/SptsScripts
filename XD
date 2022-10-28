@@ -4905,7 +4905,6 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
 		v.Parent = game.Players.LocalPlayer.Character
 v.Parent = Workspace
 	end
-    game.Players.LocalPlayer.Character.Humanoid:remove()
      game.Players.LocalPlayer.Character:remove()
     CWait(LocalPlayer.CharacterAdded)
     task.wait(0.05)
