@@ -6845,27 +6845,25 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
-    local Pos = GetRoot().CFrame
-    local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport
-    if (queue_on_teleport) then
-        queue_on_teleport(format("game.Loaded:Wait();game:GetService('ReplicatedFirst'):SetDefaultLoadingGuiRemoved();local LocalPlayer = game:GetService('Players').LocalPlayer;LocalPlayer.CharacterAdded:Wait():WaitForChild('HumanoidRootPart').CFrame = CFrame.new(%s);loadstring(game.HttpGet(game, \"https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rejoined\"))()", tostring(Pos)));
-    end
-    ExecuteCommand("rejoin", {}, LocalPlayer);
-end)
+    local CF = tostring(game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame)
+syn.queue_on_teleport(
+    string.format(
+        [[
+game:GetService('ReplicatedFirst'):RemoveDefaultLoadingScreen()
+repeat task.wait() until game:GetService("Players") and game:GetService("Players").LocalPlayer
+local LocalPlayer = game:GetService("Players").LocalPlayer
+LocalPlayer.CharacterAdded:Wait()
+repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+    LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = CFrame.new(%s)
+    LocalPlayer.Character:WaitForChild('ForceField'):Destroy()]],
+        CF
+    )
+)
+game:GetService("TeleportService"):TeleportToPlaceInstance(game["PlaceId"], game["JobId"])
 
-AddCommand("toggle", {"togglecommand", "togglecmd"}, "toggles a command with an 'un' command", {"1"}, function(Caller, Args, CEnv)
-    local Command = Args[1]
-    if (LoadCommand(Command)) then
-        CEnv.Command = (CEnv.Command and CEnv.Command ~= true) and true or not CEnv.Command
-        local NewArgs = shift(Args);
-        if (CEnv.Command) then
-            ExecuteCommand(Command, NewArgs, Caller);
-        else
-            ExecuteCommand("un" .. Command, NewArgs, Caller);
-        end
-    else
-        return Command .. " is not a valid command"
-    end
+if game:GetService("CoreGui"):FindFirstChild("TeeleportGui") then
+    game:GetService("CoreGui"):FindFirstChild("TeeleportGui"):Destroy()
+end
 end)
 
 AddCommand("iy", {}, "inf yield", {}, function()
