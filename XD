@@ -4395,7 +4395,7 @@ local speaker = game.Players.LocalPlayer
 	end
 end)
 
-AddCommand("tiny", {}, "Makes ur avatar tiny (use scale settings on lowest besides head which should be 100%", {}, function()
+AddCommand("rescale", {}, "Rescales ur avatar", {}, function()
 
 
 
