@@ -4929,12 +4929,6 @@ end)
 
 AddCommand("antifling", {}, "Cant get flung", {}, function(Caller, Args)
 
-local args = {
-    [1] = "xdd nice try 😆",
-    [2] = "All"
-}
-
-game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
 -- // Constants \\ --
 -- [ Services ] --
