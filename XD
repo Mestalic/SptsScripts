@@ -4399,7 +4399,6 @@ AddCommand("rescale", {}, "Rescales ur avatar", {}, function()
 
 
 
---Shit ass script made by failedmite57926
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Character = LocalPlayer.Character
