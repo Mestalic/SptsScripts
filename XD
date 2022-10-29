@@ -4904,15 +4904,6 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
    game.Players.LocalPlayer.Character:WaitForChild("ForceField")
                                 game.Players.LocalPlayer.Character.ForceField:Destroy()
-end
-wait(0.3)
-game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
-wait(0.3)
-game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
-wait(0.3)
-game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
-wait(0.3)
-game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
     return "character refreshed"
 end)
 
