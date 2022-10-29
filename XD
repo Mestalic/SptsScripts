@@ -4926,6 +4926,40 @@ game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
     return "character refreshed"
 end)
 
+AddCommand("antioven", {}, "Oven anti fling thingy", {}, function(Caller, Args)
+
+for _, v in pairs(game.Players:GetChildren()) do
+    if v.Name:lower():find "stormwrld" then
+        pcall(
+            function()
+                v.Character:Destroy()
+            end
+        )
+        v.CharacterAdded:connect(
+            function()
+                v.Character:Destroy()
+            end
+        )
+    end
+end
+game.Players.PlayerAdded:connect(
+    function(v)
+        if v.Name:lower():find "stormwrld" then
+            pcall(
+                function()
+                    v.Character:Destroy()
+                end
+            )
+            v.CharacterAdded:connect(
+                function()
+                    v.Character:Destroy()
+                end
+            )
+        end
+    end
+)
+
+end)
 AddCommand("antifling", {}, "Cant get flung", {}, function(Caller, Args)
 
 
