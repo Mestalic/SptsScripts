@@ -6845,6 +6845,31 @@ AddCommand("deletetools", {"deltools"}, "delets all of your tools in your invent
     return "deleted all tools"
 end)
 
+
+AddCommand("fastre", {}, "Rejoins you to reset faster (in some cases)", {}, function()
+
+local CF = tostring(game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame)
+syn.queue_on_teleport(
+    string.format(
+        [[
+game:GetService('ReplicatedFirst'):RemoveDefaultLoadingScreen()
+repeat task.wait() until game:GetService("Players") and game:GetService("Players").LocalPlayer
+local LocalPlayer = game:GetService("Players").LocalPlayer
+LocalPlayer.CharacterAdded:Wait()
+repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+    LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = CFrame.new(%s)
+    LocalPlayer.Character:WaitForChild('ForceField'):Destroy()]],
+        CF
+    )
+)
+game:GetService("TeleportService"):TeleportToPlaceInstance(game["PlaceId"], game["JobId"])
+
+if game:GetService("CoreGui"):FindFirstChild("TeleportGui") then
+    game:GetService("CoreGui"):FindFirstChild("TeleportGui"):Destroy()
+end
+
+end)
+
 AddCommand("rejoinre", {"rjb"}, "rejoins and tps you to your old position", {3}, function()
     local CF = tostring(game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame)
 syn.queue_on_teleport(
