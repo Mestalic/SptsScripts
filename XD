@@ -4005,52 +4005,6 @@ AddCommand("antiattach", {"anticlaim"}, "enables antiattach", {3}, function(Call
     end))
 end)
 
-AddCommand("mestvoid", {}, "Mestalic void (shit)", {3,1}, function(Caller, Args)
-                                local OldPos = GetRoot().CFrame
-				local LocalPlayer = game:GetService("Players").LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character:FindFirstChildOfClass("Humanoid")
-local function Remove()
-    for i, BasePart in pairs(Character:GetDescendants()) do
-        if BasePart:IsA("BasePart") then
-            for i, Attachment in pairs(BasePart:GetDescendants()) do
-                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
-                    Attachment.OriginalPosition:Destroy()
-                end
-            end
-            BasePart:WaitForChild("OriginalSize"):Destroy()
-        end
-    end
-end
-Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
-Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
-Character.LeftFoot.LeftFootAttachment:Destroy()
-for i = 1, 6 do
-    Remove()
-    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
-end
-    local Target = GetPlayer(Args[1]);
-    local Humanoid = ReplaceHumanoid();
-    local Char = GetCharacter();
-    for i, v in next, Target do
-        local Tool = FindFirstChildWhichIsA(Char, "Tool") or FindFirstChildWhichIsA(LocalPlayer.Backpack, "Tool");
-        Tool.Parent = Char
-        local TargetRoot = GetRoot(v);
-        if (TargetRoot and Tool) then
-            firetouchinterest(TargetRoot, Tool.Handle, 0);
-            firetouchinterest(TargetRoot, Tool.Handle, 1);
-	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new (9999*9999, -499, -99999*9999)
-            wait(Players.RespawnTime - 0.6);
-            game.Players.LocalPlayer.Character:remove()
-                CWait(LocalPlayer.CharacterAdded)
-    task.wait()
-    WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
-   game.Players.LocalPlayer.Character:WaitForChild("ForceField")
-                                game.Players.LocalPlayer.Character.ForceField:Destroy()
-        end
-    end
-end)
-
 AddCommand("attachfling", {}, "attaches you to another player and flings them", {3,1}, function(Caller, Args)
                                 local OldPos = GetRoot().CFrame
 				local LocalPlayer = game:GetService("Players").LocalPlayer
