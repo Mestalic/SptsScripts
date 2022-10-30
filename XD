@@ -4017,7 +4017,7 @@ AddCommand("attachfling", {}, "attaches you to another player and flings them", 
         if (TargetRoot and Tool) then
             firetouchinterest(TargetRoot, Tool.Handle, 0);
             firetouchinterest(TargetRoot, Tool.Handle, 1);
-	    	   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 99e9 ,0)
+	    	   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 6e9 ,0)
 	    wait(1)
 	    game.Players.LocalPlayer.Character:remove()
 	        CWait(LocalPlayer.CharacterAdded)
