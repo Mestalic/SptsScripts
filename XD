@@ -4008,6 +4008,7 @@ end)
 AddCommand("attachfling", {}, "attaches you to another player and flings them", {3,1}, function(Caller, Args)
            local Target = GetPlayer(Args[1]);
 	   local OldPos = GetRoot().CFrame
+	   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 99e9 ,0)
 	   local LocalPlayer = game:GetService("Players").LocalPlayer
 local Character = LocalPlayer.Character
 local Humanoid = Character:FindFirstChildOfClass("Humanoid")
@@ -4039,7 +4040,6 @@ end
         if (TargetRoot and Tool) then
             firetouchinterest(TargetRoot, Tool.Handle, 0);
             firetouchinterest(TargetRoot, Tool.Handle, 1);
-	    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 99e9 ,0)
 	    wait(1)
 	    game.Players.LocalPlayer.Character:remove()
 	        CWait(LocalPlayer.CharacterAdded)
