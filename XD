@@ -2714,28 +2714,6 @@ AddCommand("kill", {"tkill"}, "kills someone", {"1", 1, 3}, function(Caller, Arg
         Character.Animate.Disabled = true
     end
     UnequipTools(Humanoid);
-local LocalPlayer = game:GetService("Players").LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character:FindFirstChildOfClass("Humanoid")
-local function Remove()
-    for i, BasePart in pairs(Character:GetDescendants()) do
-        if BasePart:IsA("BasePart") then
-            for i, Attachment in pairs(BasePart:GetDescendants()) do
-                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
-                    Attachment.OriginalPosition:Destroy()
-                end
-            end
-            BasePart:WaitForChild("OriginalSize"):Destroy()
-        end
-    end
-end
-Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
-Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
-Character.LeftFoot.LeftFootAttachment:Destroy()
-for i = 1, 6 do
-    Remove()
-    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
-end
     local TChar;
     CThread(function()
         for i = 1, #Target do
@@ -2760,6 +2738,28 @@ end
                 if (not Tool) then
                     continue
                 end
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+local function Remove()
+    for i, BasePart in pairs(Character:GetDescendants()) do
+        if BasePart:IsA("BasePart") then
+            for i, Attachment in pairs(BasePart:GetDescendants()) do
+                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
+                    Attachment.OriginalPosition:Destroy()
+                end
+            end
+            BasePart:WaitForChild("OriginalSize"):Destroy()
+        end
+    end
+end
+Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
+Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
+Character.LeftFoot.LeftFootAttachment:Destroy()
+for i = 1, 6 do
+    Remove()
+    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
+end
                 Tool.Parent = Character
                 Tool.Handle.Size = Vector3New(4, 4, 4);
                 CFrameTool(Tool, TargetRoot.CFrame);
@@ -2819,28 +2819,6 @@ AddCommand("kill2", {}, "another variant of kill", {1, "1"}, function(Caller, Ar
             Humanoid2 = ReplaceHumanoid();
         end
     end
-local LocalPlayer = game:GetService("Players").LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character:FindFirstChildOfClass("Humanoid")
-local function Remove()
-    for i, BasePart in pairs(Character:GetDescendants()) do
-        if BasePart:IsA("BasePart") then
-            for i, Attachment in pairs(BasePart:GetDescendants()) do
-                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
-                    Attachment.OriginalPosition:Destroy()
-                end
-            end
-            BasePart:WaitForChild("OriginalSize"):Destroy()
-        end
-    end
-end
-Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
-Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
-Character.LeftFoot.LeftFootAttachment:Destroy()
-for i = 1, 6 do
-    Remove()
-    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
-end
     UnequipTools(Humanoid);
     local Destroy_;
     CThread(function()
@@ -2866,6 +2844,28 @@ end
                 if (not Tool) then
                     continue
                 end
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+local function Remove()
+    for i, BasePart in pairs(Character:GetDescendants()) do
+        if BasePart:IsA("BasePart") then
+            for i, Attachment in pairs(BasePart:GetDescendants()) do
+                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
+                    Attachment.OriginalPosition:Destroy()
+                end
+            end
+            BasePart:WaitForChild("OriginalSize"):Destroy()
+        end
+    end
+end
+Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
+Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
+Character.LeftFoot.LeftFootAttachment:Destroy()
+for i = 1, 6 do
+    Remove()
+    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
+end
                 Tool.Parent = GetCharacter();
                 Tool.Handle.Size = Vector3New(4, 4, 4);
                 CFrameTool(Tool, TargetRoot.CFrame * CFrameNew(0, 3, 0));
@@ -3099,28 +3099,7 @@ AddCommand("void", {"kill3"}, "voids a user", {1,"1"}, function(Caller, Args)
             ReplaceHumanoid();
         end
     end
-    local LocalPlayer = game:GetService("Players").LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character:FindFirstChildOfClass("Humanoid")
-local function Remove()
-    for i, BasePart in pairs(Character:GetDescendants()) do
-        if BasePart:IsA("BasePart") then
-            for i, Attachment in pairs(BasePart:GetDescendants()) do
-                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
-                    Attachment.OriginalPosition:Destroy()
-                end
-            end
-            BasePart:WaitForChild("OriginalSize"):Destroy()
-        end
-    end
-end
-Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
-Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
-Character.LeftFoot.LeftFootAttachment:Destroy()
-for i = 1, 6 do
-    Remove()
-    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
-end
+   
     local Target2Root = Target2 and GetRoot(Target2 and Target2[1] or nil);
     for i = 1, #Target do
         local v = Target[i]
@@ -3150,6 +3129,28 @@ end
             if (not syn) then
                 wait(.1);
             end
+	    local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+local function Remove()
+    for i, BasePart in pairs(Character:GetDescendants()) do
+        if BasePart:IsA("BasePart") then
+            for i, Attachment in pairs(BasePart:GetDescendants()) do
+                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
+                    Attachment.OriginalPosition:Destroy()
+                end
+            end
+            BasePart:WaitForChild("OriginalSize"):Destroy()
+        end
+    end
+end
+Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
+Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
+Character.LeftFoot.LeftFootAttachment:Destroy()
+for i = 1, 6 do
+    Remove()
+    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
+end
             for i2 = 1, 3 do
                 firetouchinterest(TargetRoot, Tool.Handle, 0);
                 wait();
