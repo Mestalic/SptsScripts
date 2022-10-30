@@ -4008,29 +4008,6 @@ end)
 AddCommand("attachfling", {}, "attaches you to another player and flings them", {3,1}, function(Caller, Args)
            local Target = GetPlayer(Args[1]);
 	   local OldPos = GetRoot().CFrame
-	   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 99e9 ,0)
-	   local LocalPlayer = game:GetService("Players").LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character:FindFirstChildOfClass("Humanoid")
-local function Remove()
-    for i, BasePart in pairs(Character:GetDescendants()) do
-        if BasePart:IsA("BasePart") then
-            for i, Attachment in pairs(BasePart:GetDescendants()) do
-                if Attachment:IsA("ValueBase") and Attachment:FindFirstChild("OriginalPosition") then
-                    Attachment.OriginalPosition:Destroy()
-                end
-            end
-            BasePart:WaitForChild("OriginalSize"):Destroy()
-        end
-    end
-end
-Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
-Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
-Character.LeftFoot.LeftFootAttachment:Destroy()
-for i = 1, 6 do
-    Remove()
-    Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
-end
     local Humanoid = ReplaceHumanoid();
     local Char = GetCharacter();
     for i, v in next, Target do
@@ -4040,6 +4017,7 @@ end
         if (TargetRoot and Tool) then
             firetouchinterest(TargetRoot, Tool.Handle, 0);
             firetouchinterest(TargetRoot, Tool.Handle, 1);
+	    	   game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 99e9 ,0)
 	    wait(1)
 	    game.Players.LocalPlayer.Character:remove()
 	        CWait(LocalPlayer.CharacterAdded)
