@@ -4006,9 +4006,9 @@ AddCommand("antiattach", {"anticlaim"}, "enables antiattach", {3}, function(Call
 end)
 
 AddCommand("attachfling", {}, "attaches you to another player and flings them", {3,1}, function(Caller, Args)
-                                local OldPos = GetRoot().CFrame
-				local LocalPlayer = game:GetService("Players").LocalPlayer
-				game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 6e9, 0)
+           local Target = GetPlayer(Args[1]);
+	   local OldPos = GetRoot().CFrame
+	   local LocalPlayer = game:GetService("Players").LocalPlayer
 local Character = LocalPlayer.Character
 local Humanoid = Character:FindFirstChildOfClass("Humanoid")
 local function Remove()
@@ -4030,7 +4030,6 @@ for i = 1, 6 do
     Remove()
     Humanoid:FindFirstChildWhichIsA("NumberValue"):Destroy()
 end
-    local Target = GetPlayer(Args[1]);
     local Humanoid = ReplaceHumanoid();
     local Char = GetCharacter();
     for i, v in next, Target do
@@ -4040,15 +4039,16 @@ end
         if (TargetRoot and Tool) then
             firetouchinterest(TargetRoot, Tool.Handle, 0);
             firetouchinterest(TargetRoot, Tool.Handle, 1);
-            wait(Players.RespawnTime - 0.6);
-            game.Players.LocalPlayer.Character:remove()
-                CWait(LocalPlayer.CharacterAdded)
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 99e9 ,0)
+	    wait(0.3)
+	    game.Players.LocalPlayer.Character:remove()
+	        CWait(LocalPlayer.CharacterAdded)
     task.wait()
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
    game.Players.LocalPlayer.Character:WaitForChild("ForceField")
                                 game.Players.LocalPlayer.Character.ForceField:Destroy()
         end
-    end
+    end                        
 end)
 
 AddCommand("attach", {}, "attaches you to another player", {3,1}, function(Caller, Args)
