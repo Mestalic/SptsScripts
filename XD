@@ -4016,7 +4016,7 @@ AddCommand("attachfling", {}, "attaches you to another player and flings them", 
             game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 6e9, 0)
         end
     end
-
+end)
 
 AddCommand("attach", {}, "attaches you to another player", {3,1}, function(Caller, Args)
     local Target = GetPlayer(Args[1]);
