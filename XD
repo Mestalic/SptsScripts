@@ -3928,6 +3928,7 @@ local speaker = game.Players.LocalPlayer
 		end
 		wait()
 	end
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OldPos
 	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0, Enum.EasingStyle.Linear)
 tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = OldPos})
 tween:Play()
