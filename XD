@@ -3914,7 +3914,7 @@ AddCommand("fling", {"stan"}, "flings a player", {}, function(Caller, Args)
         until (TargetPos - TargetRoot.Position).magnitude >= 60 or tick() - starttime >= 0.7
         Disconnect(Running);
     end
-    wait(0.8)
+    task.wait()
     local BeenASecond, V3 = false, Vector3.new(0, 0, 0)
 
 local speaker = game.Players.LocalPlayer
