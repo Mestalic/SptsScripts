@@ -3905,15 +3905,16 @@ AddCommand("fling", {"stan"}, "flings a player", {}, function(Caller, Args)
         local Running = CConnect(Stepped, function(step)
             step = step - Services.Workspace.DistributedGameTime
 
-            Root.CFrame = (TargetRoot.CFrame - (Vector3New(0, 1e6, 0) * step)) + (TargetRoot.Velocity * (step * 47))
+            Root.CFrame = (TargetRoot.CFrame - (Vector3New(0, 1e6, 0) * step)) + (TargetRoot.Velocity * (step * 48))
             Root.Velocity = Vector3New(0, 1e6, 0)
         end)
         local starttime = tick();
         repeat
             wait();
-        until (TargetPos - TargetRoot.Position).magnitude >= 60 or tick() - starttime >= 4
+        until (TargetPos - TargetRoot.Position).magnitude >= 60 or tick() - starttime >= 3.6
         Disconnect(Running);
     end
+    wait(1)
     local BeenASecond, V3 = false, Vector3.new(0, 0, 0)
 
 local speaker = game.Players.LocalPlayer
