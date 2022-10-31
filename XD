@@ -3911,7 +3911,7 @@ AddCommand("fling", {"stan"}, "flings a player", {}, function(Caller, Args)
         local starttime = tick();
         repeat
             wait();
-        until (TargetPos - TargetRoot.Position).magnitude >= 60 or tick() - starttime >= 2.6
+        until (TargetPos - TargetRoot.Position).magnitude >= 60 or tick() - starttime >= 0.7
         Disconnect(Running);
     end
     wait(0.3)
