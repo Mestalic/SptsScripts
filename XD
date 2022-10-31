@@ -3921,6 +3921,20 @@ AddCommand("fling", {"stan"}, "flings a player", {}, function(Caller, Args)
     end)
     wait(2);
     Root.Anchored = true
+    local BeenASecond, V3 = false, Vector3.new(0, 0, 0)
+
+local speaker = game.Players.LocalPlayer
+	delay(1, function()
+		BeenASecond = true
+	end)
+	while not BeenASecond do
+		for _, v in ipairs(speaker.Character:GetDescendants()) do
+			if v.IsA(v, "BasePart") then
+				v.Velocity, v.RotVelocity = V3, V3
+			end
+		end
+		wait()
+	end
     Disconnect(Running);
     Root.Anchored = false
     Root.Velocity = OldVelocity
