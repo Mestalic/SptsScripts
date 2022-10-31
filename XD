@@ -3906,7 +3906,7 @@ AddCommand("fling", {"stan"}, "flings a player", {}, function(Caller, Args)
             step = step - Services.Workspace.DistributedGameTime
 
             Root.CFrame = (TargetRoot.CFrame - (Vector3New(0, 1e6, 0) * step)) + (TargetRoot.Velocity * (step * 55))
-            Root.Velocity = Vector3New(0, 1e7, 0)
+            Root.Velocity = Vector3New(0, 1e6, 0)
         end)
         local starttime = tick();
         repeat
