@@ -3914,7 +3914,7 @@ AddCommand("fling", {"stan"}, "flings a player", {}, function(Caller, Args)
         until (TargetPos - TargetRoot.Position).magnitude >= 60 or tick() - starttime >= 1.8
         Disconnect(Running);
     end
-    task.wait(0.2)
+    task.wait(0.4)
     local BeenASecond, V3 = false, Vector3.new(0, 0, 0)
 
 local speaker = game.Players.LocalPlayer
@@ -3931,6 +3931,7 @@ local speaker = game.Players.LocalPlayer
 	end
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OldPos
 	tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(0, Enum.EasingStyle.Linear)
+	tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = OldPos})
 tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = OldPos})
 tween:Play()
 end)
