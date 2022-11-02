@@ -4931,7 +4931,8 @@ end)
 
 AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     ReplaceCharacter();
-    wait(Players.RespawnTime + game:GetService("Stats").Network.ServerStatsItem["Data Ping"]);
+    wait(game.Players.RespawnTime);
+    wait(game:GetService("Stats").Network.ServerStatsItem["Data Ping"])
     local OldPos = GetRoot().CFrame
     game.Players.LocalPlayer.Character:remove()
     ReplaceHumanoid()
