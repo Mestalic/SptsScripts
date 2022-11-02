@@ -4932,7 +4932,7 @@ end)
 AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     ReplaceCharacter();
     wait(game.Players.RespawnTime);
-    wait(game.Players.LocalPlayer:GetNetworkPing() * 1000)
+    wait(game.Players.LocalPlayer:GetNetworkPing())
     local OldPos = GetRoot().CFrame
     game.Players.LocalPlayer.Character:remove()
     ReplaceHumanoid()
