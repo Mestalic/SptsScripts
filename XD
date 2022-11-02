@@ -4930,9 +4930,11 @@ AddCommand("reset", {}, "resets your character", {3}, function()
 end)
 
 AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
+    local Stats = Services.Stats
+    local DataPing = Stats.Network.ServerStatsItem["Data Ping"]
     ReplaceCharacter();
     wait(game.Players.RespawnTime);
-    wait(game.Players.LocalPlayer:GetNetworkPing())
+    wait(DataPing)
     local OldPos = GetRoot().CFrame
     game.Players.LocalPlayer.Character:remove()
     ReplaceHumanoid()
