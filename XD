@@ -4933,11 +4933,10 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
         local Stats = Services.Stats
     local DataPing = Stats.Network.ServerStatsItem["Data Ping"]
     ReplaceCharacter();
+        wait(Players.RespawnTime- 0.03);
+	    local OldPos = GetRoot().CFrame
     wait(DataPing);
-    wait(Players.RespawnTime- 0.03);
-    local OldPos = GetRoot().CFrame
-    game.Players.LocalPlayer.Character:remove();
-    ReplaceHumanoid()
+    game.Players.LocalPlayer.Character:remove()
     CWait(LocalPlayer.CharacterAdded)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
    game.Players.LocalPlayer.Character:WaitForChild("ForceField")
