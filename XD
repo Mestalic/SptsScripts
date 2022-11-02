@@ -9348,11 +9348,11 @@ loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsSc
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/nokick"))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
 if game.Players.LocalPlayer.PlayerGui.DailyReward.Enabled == true then
-for i = 1, 1000 do
-   for i = 1, 100 do
-       for i = 1, 10 do
-           game.ReplicatedStorage.ClaimReward:FireServer()
-       end
-   end
-   end
+for i = 1, 1500 do
+   for i = 1, 150 do
+       for i = 1, 15 do
+           game:service("ReplicatedStorage")["ClaimReward"]:FireServer()
+       end;
+   end;
+end;
 end
