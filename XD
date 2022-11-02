@@ -9346,7 +9346,6 @@ Utils.Notify(LocalPlayer, "Newest Update", format("%s - %s", _L.LatestCommit.com
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/loaded"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rcon"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/nokick"))()
-wait(1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
 if game.Players.LocalPlayer.PlayerGui.DailyReward.Enabled == true then
 for i = 1, 1000 do
