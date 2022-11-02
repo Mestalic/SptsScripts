@@ -4921,7 +4921,7 @@ game.Players.LocalPlayer.Character.Humanoid.Jump = true
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.6548, 33.4955, -17261.8027, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 
 end)
-
+loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
 AddCommand("nk", {}, "Unable to be kiled/voided if ur in r15", {}, function()
 
 game.Players.LocalPlayer.Character.RightHand:remove()
@@ -9346,8 +9346,6 @@ Utils.Notify(LocalPlayer, "Newest Update", format("%s - %s", _L.LatestCommit.com
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/loaded"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/rcon"))()
 loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Mestalic/SptsScripts/main/nokick"))()
-wait()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
 if game.Players.LocalPlayer.PlayerGui.DailyReward.Enabled == true then
 for i = 1, 1500 do
    for i = 1, 150 do
