@@ -5400,7 +5400,7 @@ Services.RunService.Heartbeat:Connect(function()
        end
    end)
 end)
-
+return "antifling on ig"
 end)
 
 
