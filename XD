@@ -5323,7 +5323,7 @@ game.Players.PlayerAdded:connect(
 end)
 AddCommand("antifling", {}, "Cant get flung", {}, function(Caller, Args)
 
-
+return "antifling on ig"
 -- // Constants \\ --
 -- [ Services ] --
 local Services = setmetatable({}, {__index = function(Self, Index)
@@ -5401,7 +5401,6 @@ Services.RunService.Heartbeat:Connect(function()
        end
    end)
 end)
-return "antifling on ig"
 end)
 
 
