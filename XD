@@ -4590,6 +4590,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5533.845
 end)
 
 AddCommand("boomboxhub", {}, "._", {}, function()
+wait()
 loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/RiptxdeDev/boomboxhubv3/main/BoomboxHubReleased.lua'))()
 end)
 
