@@ -5256,12 +5256,12 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
        ReplaceCharacter();
     wait(Players.RespawnTime -0.01);
     local OldPos = GetRoot().CFrame
-    ReplaceHumanoid()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, 9999^9999, -9999*9999)
     	for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 		v.Parent = game.Players.LocalPlayer.Character
 v.Parent = Workspace
 	end
+	    ReplaceHumanoid()
     CWait(LocalPlayer.CharacterAdded)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
    game.Players.LocalPlayer.Character:WaitForChild("ForceField")
