@@ -11,7 +11,6 @@ if (not game.IsLoaded(game)) then
     local Loaded = game.Loaded
     Loaded.Wait(Loaded);
 end
-wait(2)
 local _L = {}
 
 _L.start = start or tick();
@@ -5253,8 +5252,6 @@ AddCommand("reset", {}, "resets your character", {3}, function()
 end)
 
 AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
-setfpscap(1)
-       setfpscap(1444)
        ReplaceCharacter();
     wait(Players.RespawnTime);
     local OldPos = GetRoot().CFrame
