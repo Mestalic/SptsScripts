@@ -5261,7 +5261,7 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
 		v.Parent = game.Players.LocalPlayer.Character
 v.Parent = Workspace
 	end
-	    ReplaceHumanoid()
+	    game.Players.LocalPlayer.Character.Head:remove()
     CWait(LocalPlayer.CharacterAdded)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
    game.Players.LocalPlayer.Character:WaitForChild("ForceField")
