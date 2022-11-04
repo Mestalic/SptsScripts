@@ -5257,9 +5257,9 @@ AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
     local OldPos = GetRoot().CFrame
 local BodyPosition = Instance.new("BodyPosition")
 BodyPosition.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
-BodyPosition.MaxForce = Vector3.new(math.huge^math.huge,math.huge^math.huge,math.huge^math.huge) 
+BodyPosition.MaxForce = Vector3.new(math.huge,math.huge,math.huge) 
 BodyPosition.Position = Vector3.new(0,-600, 324)
-BodyPosition.P =  6000
+BodyPosition.P =  4000
 	    game.Players.LocalPlayer.Character.Humanoid.Health = 0
     CWait(LocalPlayer.CharacterAdded)
     WaitForChild(LocalPlayer.Character, "HumanoidRootPart").CFrame = OldPos
