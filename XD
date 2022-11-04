@@ -5253,7 +5253,9 @@ AddCommand("reset", {}, "resets your character", {3}, function()
 end)
 
 AddCommand("refresh", {"re"}, "refreshes your character", {3}, function(Caller)
+setfpscap(1)
        ReplaceCharacter();
+       setfpscap(1444)
     wait(Players.RespawnTime);
     local OldPos = GetRoot().CFrame
 	    game.Players.LocalPlayer.Character.Humanoid.Health = 0
