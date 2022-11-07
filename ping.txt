@@ -1,0 +1,39 @@
+repeat
+wait()
+until game:IsLoaded()
+wait(2.3)
+if game:GetService("CoreGui"):FindFirstChild("CordsGui") then
+    game:GetService("CoreGui"):FindFirstChild("CordsGui"):Destroy()
+end
+-- Instances:
+
+local CordsGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+CordsGui.Name = "CordsGui"
+CordsGui.Parent = game.CoreGui
+CordsGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = CordsGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(33, 33, 33)
+TextLabel.Position = UDim2.new(0.45 , 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 25)
+TextLabel.Font = Enum.Font.GothamBlack
+TextLabel.TextColor3 = Color3.fromRGB(106, 13, 173)
+TextLabel.TextSize = 20.000
+shared.io = game:GetService('RunService').RenderStepped:Connect(function()
+local Current_Ping = string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), " ")[1] .. "ms"
+TextLabel.Text = (tostring(Current_Ping))
+end)
+local t = 5; --how long does it take to go through the rainbow
+local tick = tick
+local fromHSV = Color3.fromHSV
+local RunService = game:GetService("RunService")
+local Frame = script.Parent
+
+	local color = Color3.fromRGB(106, 13, 173)
+game.CoreGui.CordsGui.TextLabel.TextColor3 = color
