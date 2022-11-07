@@ -1,7 +1,4 @@
-repeat
-wait()
-until game:IsLoaded()
-wait(2)
+
 
 -- // Notes:
 -- The emojis list is based from discord the list is here: https://raw.githubusercontent.com/Aidez/emojiscopy/master/main or https://pastebin.com/raw/719UsVji \\ --
