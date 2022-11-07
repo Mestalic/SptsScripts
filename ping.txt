@@ -1,7 +1,4 @@
-repeat
-wait()
-until game:IsLoaded()
-wait(2.3)
+
 if game:GetService("CoreGui"):FindFirstChild("CordsGui") then
     game:GetService("CoreGui"):FindFirstChild("CordsGui"):Destroy()
 end
