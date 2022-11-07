@@ -1,0 +1,127 @@
+repeat task.wait() until game:IsLoaded()
+    wait(1.1)
+local IDs={
+    ClimbAnim   = 1069946257,
+    FallAnim    = 1069973677,
+    Idle1       = 1149612882,
+    Idle2       = 1150842221,
+    Jump        = 1069984524,
+    Run         = 1132494274,
+    Swim        = 616165109,
+    SwimIdle    = 616166655,
+    Walk        = 1132510133,
+}
+
+--[[
+ > Confident
+    ClimbAnim   = 1069946257,
+    FallAnim    = 1069973677,
+    Idle1       = 1069977950,
+    Idle2       = 1069987858,
+    Jump        = 1069984524,
+    Run         = 1070001516,
+    Swim        = 1070009914,
+    SwimIdle    = 1070012133,
+    Walk        = 1070017263,
+
+ > Popstar
+    ClimbAnim   = 1213044953,
+    FallAnim    = 1212900995,
+    Idle1       = 1212900985,
+    Idle2       = 1212900985, -- COULDNT FIND A GLOBAL IDLE2 FOR POPSTAR
+    Jump        = 1212954642,
+    Run         = 1212980348,
+    Swim        = 1212852603,
+    SwimIdle    = 1212998578,
+    Walk        = 1212980338,
+
+ > Princess
+    ClimbAnim   = 940996062,
+    FallAnim    = 941000007,
+    Idle1       = 941003647,
+    Idle2       = 941013098,
+    Jump        = 941008832,
+    Run         = 941015281,
+    Swim        = 941018893,
+    SwimIdle    = 941025398,
+    Walk        = 941028902,
+
+ > Zombie
+    ClimbAnim   = 616156119,
+    FallAnim    = 616157476,
+    Idle1       = 3489171152,
+    Idle2       = 3489171152,
+    Jump        = 616161997,
+    Run         = 3489173414,
+    Swim        = 616165109,
+    SwimIdle    = 616166655,
+    Walk        = 3489174223,
+
+ > Cowboy 
+    ClimbAnim   = 1014380606,
+    FallAnim    = 1014384571,
+    Idle1       = 1014390418,
+    Idle2       = 1014398616,
+    Jump        = 1014394726,
+    Run         = 1014401683,
+    Swim        = 1014406523,
+    SwimIdle    = 1014411816,
+    Walk        = 1014421541,
+// tc#0001
+ > Patrol 
+    ClimbAnim   = 1148811837,
+    FallAnim    = 1148863382,
+    Idle1       = 1149612882,
+    Idle2       = 1150842221,
+    Jump        = 1150944216,
+    Run         = 1150967949,
+    Swim        = 1151204998,
+    SwimIdle    = 1151221899,
+    Walk        = 1151231493,
+
+ > Sneaky
+    ClimbAnim   = 1132461372,
+    FallAnim    = 1132469004,
+    Idle1       = 1132473842,
+    Idle2       = 1132477671,
+    Jump        = 1132489853,
+    Run         = 1132494274,
+    Swim        = 1132500520,
+    SwimIdle    = 1132506407,
+    Walk        = 1132510133,
+]]
+
+
+for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+    v:Stop()
+end
+
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.ClimbAnim
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.FallAnim
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle1
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle2
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Jump
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId        = "http://www.roblox.com/asset/?id="..IDs.Run
+game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId          = "http://www.roblox.com/asset/?id="..IDs.Swim
+game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId  = "http://www.roblox.com/asset/?id="..IDs.SwimIdle
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Walk
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.Weight.Value   = "1"; game.Players.LocalPlayer.Character.Animate.idle.Animation1.Weight.Value   = "10"
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
+wait(0.2)
+for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+    v:Stop()
+end
+
+game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.ClimbAnim
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.FallAnim
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle1
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle2
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Jump
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId        = "http://www.roblox.com/asset/?id="..IDs.Run
+game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId          = "http://www.roblox.com/asset/?id="..IDs.Swim
+game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId  = "http://www.roblox.com/asset/?id="..IDs.SwimIdle
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Walk
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.Weight.Value   = "1"; game.Players.LocalPlayer.Character.Animate.idle.Animation1.Weight.Value   = "10"
+end
+)
