@@ -1,8 +1,5 @@
 
-while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
-    not game:GetService("Players").LocalPlayer.PlayerGui do
-    wait()
-end
+
 
 function PlayerJoined(text)
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
