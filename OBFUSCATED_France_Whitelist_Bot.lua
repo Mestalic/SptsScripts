@@ -1,5 +1,5 @@
 _G.LengthOfFlinging = 125
-_G.ChatMessage = 'Enjoy the 2 minutes of flinging nerds🤣   | .gg/J29ZU55KWQ for the bot'
+_G.ChatMessage = 'Enjoy the 2 minutes of flinging nerds🤣   | SssniperDonkey7515 for whitelist'
 _G.Whitelist = {
     508960114,
     2053921341,
