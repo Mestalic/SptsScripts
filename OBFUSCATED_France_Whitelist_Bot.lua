@@ -3,7 +3,7 @@ _G.ChatMessage = 'Enjoy the 2 minutes of flinging nerds🤣   | SssniperDonkey75
 _G.Whitelist = {
     508960114,
     2053921341,
-    2346954708,
+    1,
     1,
     3528728861,
     104532904,
