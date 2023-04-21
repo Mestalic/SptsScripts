@@ -641,6 +641,7 @@ cmdlp.Character.Animate.Disabled = false
 			game:GetService("Players"):Chat("/e point");
 		end
 		if (msg == ".stopemotes") then
+		animationdebounce = true
 			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
 			task.wait();
 			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
