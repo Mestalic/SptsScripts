@@ -5,7 +5,6 @@ end
 
 local args = {...};
 local bots = args[1].bots;
-local config = args[1].config;
 
 local controller = {           
   ["MainAccount"] = true,
@@ -49,7 +48,7 @@ if not controller[game:GetService("Players").LocalPlayer.Name] then
 end
 
 for i, botName in ipairs(bots) do
-	if game:GetService("Players").LocalPlayer.Name == botName and config['SendJoinMsg'] == true then
+	if game:GetService("Players").LocalPlayer.Name == botName then
 		local ohString1 = "A bot has loaded! [Bot " .. i .. " of " .. #bots .. "]";
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, "All");
 		task.wait();
