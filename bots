@@ -2,14 +2,20 @@ task.wait();
 if not game:IsLoaded() then
 	game.Loaded:Wait();
 end
+
 local args = {...};
-local controller = args[1].controller or {           
-  ["MainAccount"] = "Mestalic",
-  ["MainAccount2"] = "7997968"
-};
 local bots = args[1].bots;
 local config = args[1].config;
-if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount'] or game:GetService("Players").LocalPlayer.Name == controller['MainAccount2']) then
+
+local controller = {           
+  ["MainAccount"] = true,
+  ["SecondaryAccount"] = true,
+  ["AnotherAccount"] = true,
+}
+
+local controlledBy = table.concat({"MainAccount", "7997968", "Mestalic"}, " or ")
+
+if not controller[game:GetService("Players").LocalPlayer.Name] then
 	local UserSettings = UserSettings();
 	UserSettings.GameSettings.MasterVolume = 0;
 	task.wait();
@@ -41,21 +47,28 @@ if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']
 		end
 	end
 end
+
 for i, botName in ipairs(bots) do
-	if ((game:GetService("Players").LocalPlayer.Name == botName) and (config['SendJoinMsg'] == true)) then
-		ohString1 = "A bot has loaded! [Bot " .. i .. " of " .. #bots .. "]";
+	if game:GetService("Players").LocalPlayer.Name == botName and config['SendJoinMsg'] == true then
+		local ohString1 = "A bot has loaded! [Bot " .. i .. " of " .. #bots .. "]";
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, "All");
 		task.wait();
 	end
 end
-if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount'] or game:GetService("Players").LocalPlayer.Name == controller['MainAccount2']) then
-	(game:GetService("Players").LocalPlayer.Name == controller['MainAccount'] or game:GetService("Players").LocalPlayer.Name == controller['MainAccount2']).Chatted:Connect(function(msg)
-		local args = string.split(string.lower(msg), " ");
-		local cmd = args[1];
-		local function chatmsg(message, target)
-			target = target or "All";
-			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, target);
-		end
+
+for controllerName, _ in pairs(controller) do
+	if game:GetService("Players"):FindFirstChild(controllerName) then
+		game:GetService("Players")[controllerName].Chatted:Connect(function(msg)
+			local args = string.split(string.lower(msg), " ");
+			local cmd = args[1];
+			local function chatmsg(message, target)
+				target = target or "All";
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, target);
+			end
+		end)
+	end
+end
+
 		if (cmd == ".say") then
 			local say_msg = string.sub(msg, string.len(cmd) + 2, string.len(msg));
 			ohString1 = say_msg;
