@@ -103,46 +103,6 @@ if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']
 		if (msg == ".sit") then
 			game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = true;
 		end
-						if (msg == ".xd") then
-						        local Players, Player, Character
-        Players = game:GetService("Players")
-        Player = Players.LocalPlayer
-        Character = Player.Character
-local Ascii = [==[
-        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ██░█▀▄██▄██░██░████░██░█▀▄▄▀█░██░█░▄▄▀█░▄▄█░▄▄█░██░▄▄███▄▀█▀▄██░▄▄▀
-        ██░▄▀███░▄█░██░████░▀▀░█░██░█░██░█░▀▀▄█▄▄▀█░▄▄█░██░▄██████░████░██░
-        ██░██░█▄▄▄█▄▄█▄▄███▀▀▀▄██▄▄███▄▄▄█▄█▄▄█▄▄▄█▄▄▄█▄▄█▄█████▀▄█▄▀██░▀▀░
-        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ██░█▀▄██▄██░██░████░██░█▀▄▄▀█░██░█░▄▄▀█░▄▄█░▄▄█░██░▄▄███▄▀█▀▄██░▄▄▀
-        ██░▄▀███░▄█░██░████░▀▀░█░██░█░██░█░▀▀▄█▄▄▀█░▄▄█░██░▄██████░████░██░
-        ██░██░█▄▄▄█▄▄█▄▄███▀▀▀▄██▄▄███▄▄▄█▄█▄▄█▄▄▄█▄▄▄█▄▄█▄█████▀▄█▄▀██░▀▀░
-        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        ██░█▀▄██▄██░██░████░██░█▀▄▄▀█░██░█░▄▄▀█░▄▄█░▄▄█░██░▄▄███▄▀█▀▄██░▄▄▀
-        ██░▄▀███░▄█░██░████░▀▀░█░██░█░██░█░▀▀▄█▄▄▀█░▄▄█░██░▄██████░████░██░
-        ██░██░█▄▄▄█▄▄█▄▄███▀▀▀▄██▄▄███▄▄▄█▄█▄▄█▄▄▄█▄▄▄█▄▄█▄█████▀▄█▄▀██░▀▀░
-        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-        ]==]
-        
-        Character.HumanoidRootPart.CFrame = CFrame.new(-21,643877876764,5423)
-        local Tool = Player.Backpack:FindFirstChildWhichIsA("Tool", true) or Character:FindFirstChildWhichIsA("Tool", true)
-        if Tool == nil then 
-            print("[Error]: No Tool detected.") 
-            return
-        end
-        
-        Tool.Parent = Character
-wait(0.1)
-Character.HumanoidRootPart.Anchored = true
-        while true do
-        for i = 1, 10000 do
-            Tool.Remote:FireServer("PlaySong", "\n" .. Ascii)
-        end
-        wait(27)
-    end
-						end
 		if (msg == ".rweld") then
 		local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
