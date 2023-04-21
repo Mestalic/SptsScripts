@@ -815,6 +815,9 @@ end
 						elseif table.find(bots, player.Name) then
 							chatmsg("The user you specified is one of your bots!");
 						else
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local rservice = game:GetService("RunService")
     local Character = LocalPlayer.Character
     local Humanoid = Character:FindFirstChildOfClass("Humanoid")
     local RootPart = Humanoid.RootPart
@@ -915,6 +918,7 @@ end
         workspace.CurrentCamera.CameraSubject = Humanoid
     end
 end
+SkidFling()
 					end
 				end
 			end
