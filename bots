@@ -4,11 +4,13 @@ if not game:IsLoaded() then
 	game.Loaded:Wait();
 end
 local args = {...};
-local controller = args[1].controller;
-local controller2 = args[1].controller2;
+local controller = args[1].controller or {           
+  ["MainAccount"] = "Mestalic",
+  ["MainAccount2"] = "7997968"
+};
 local bots = args[1].bots;
 local config = args[1].config;
-if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) or (game:GetService("Players").LocalPlayer.Name == controller2['MainAccount2']) then
+if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) then
 	local UserSettings = UserSettings();
 	UserSettings.GameSettings.MasterVolume = 0;
 	task.wait();
