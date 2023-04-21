@@ -198,13 +198,7 @@ _G.Whitelist = {
 if (not game:IsLoaded()) then
 	game.Loaded:Wait();
 end
-for _, obj in ipairs(workspace:GetDescendants()) do
-    if obj:IsA("Seat") and obj.Occupant == nil then
-        seat = obj
-        obj:Sit(game.Players.LocalPlayer.Character.Humanoid)
-        break
-    end
-end
+
 local lp = game.Players.LocalPlayer
 
 repeat wait() until lp and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") and lp.Character:FindFirstChild("Animate")
