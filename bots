@@ -598,18 +598,23 @@ end
 			game:GetService("Players"):Chat("/e dance3");
 		end
 		if (msg == ".dance4") then
-			local Anim = Instance.new("Animation");
-			Anim.AnimationId = "rbxassetid://12874447851";
-			local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim);
-			k:Play(0);
-			k:AdjustSpeed(1);
-			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
-			game:GetService("Players").LocalPlayer.Character.Humanoid.Running:connect(function(speed)
-				if (speed > 0) then
-					game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
-					k:Stop(0);
-				end
-			end);
+animationdebounce = false
+local cmdlp = game.Players.LocalPlayer
+cmdlp.Character.Animate.Disabled = true
+for i,v in pairs(cmdlp.Character.Humanoid:GetPlayingAnimationTracks()) do
+    v:Stop()
+end
+coroutine.resume(coroutine.create(function()
+while not animationdebounce do
+    local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://12874447851"
+    local anim = cmdlp.Character.Humanoid:LoadAnimation(Anim)
+    anim:Play()
+    anim:AdjustWeight(10)
+    anim.Stopped:Wait()
+end
+end))
+cmdlp.Character.Animate.Disabled = false
 		end
 		if (msg == ".laugh") then
 			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
