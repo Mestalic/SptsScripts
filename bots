@@ -1006,7 +1006,7 @@ end
 			end
 		end
 		if (msg == ".stopall") then
-			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
+			getgenv().LoopSlowSpam, getgenv().LoopFastSpam, getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
 		end
 		if (msg == ".re") then
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0;
