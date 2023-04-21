@@ -891,8 +891,8 @@ end
 			local FaggotFucktard = imgay.Character:WaitForChild("ForceField");
 			FaggotFucktard:Destroy();
 		end
-		if (msg == ".sv") then
-			game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(".gg/hear", "All");
+		if (msg == ".script") then
+			game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Lake9999", "All");
 		end
 		if (msg == ".unlookat") then
 			getgenv().LoopLook = false;
