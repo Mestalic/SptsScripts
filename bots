@@ -802,26 +802,16 @@ end
 			end
 			followPlayer(playerName);
 		end
-		if (msg:sub(1, 6) == ".fling ") then
-			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
-			local function SkidFling()
-						local playerName = msg:sub(7);
-			local Players = game:GetService("Players");
-			local LocalPlayer = Players.LocalPlayer;
-				for _, player in ipairs(Players:GetPlayers()) do
-					if ((string.lower(player.Name):sub(1, #playerName) == string.lower(playerName)) or (string.lower(player.DisplayName):sub(1, #playerName) == string.lower(playerName))) then
-						if (player == LocalPlayer) then
-							chatmsg("The user you specified is one of your bots!");
-						elseif table.find(bots, player.Name) then
-							chatmsg("The user you specified is one of your bots!");
-						else
-local Players = game:GetService("Players")
+		if (msg == ".rhand") then
+		local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local rservice = game:GetService("RunService")
+			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
+			local function SkidFling()      
     local Character = LocalPlayer.Character
     local Humanoid = Character:FindFirstChildOfClass("Humanoid")
     local RootPart = Humanoid.RootPart
-    local TargetPlayer = player
+    
     local TCharacter = TargetPlayer.Character
     local THumanoid
     local TRootPart
@@ -858,29 +848,28 @@ local rservice = game:GetService("RunService")
         end
         local function FPos(BasePart,Pos,Ang)
             RootPart.CFrame = CFrame.new(BasePart.Position) * Pos * Ang
-            RootPart.Velocity = Vector3.new(11e32,11e32,11e32)
-            RootPart.RotVelocity = Vector3.new(11e32,11e32,11e32)
+            RootPart.Velocity = Vector3.new(1e12,11e5,15e5)
+            RootPart.RotVelocity = Vector3.new(11e6,10e26,11e21)
         end
         local function SFBasePart(BasePart)
-            local TimeToWait = 1.2
+            local TimeToWait = 0.36
             local Time = tick()
-            local Angle = 0
-            
+            local Angle = 170
             repeat
                 if RootPart and THumanoid then
                     if BasePart.Velocity.Magnitude < 30 then
-                        Angle = Angle + 0
-                        FPos(BasePart,CFrame.new(0,1.5,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 2.7,CFrame.Angles(math.rad(Angle),0,0))
+                                      Angle = 248 + 685
+                        FPos(BasePart,CFrame.new(0,-1.5,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.65,CFrame.Angles(math.rad(Angle),20,0))
                         game:GetService("RunService").Heartbeat:wait()
 
-                        FPos(BasePart,CFrame.new(0,1.5,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 2.3,CFrame.Angles(math.rad(Angle),0,0))
-                        game:GetService("RunService").Heartbeat:wait()
-
-                        FPos(BasePart,CFrame.new(0,-1.5,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.4,CFrame.Angles(math.rad(Angle),0,0))
+                                     FPos(BasePart,CFrame.new(0,0.5,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.5,CFrame.Angles(math.rad(Angle),371,831))
                         game:GetService("RunService").Heartbeat:wait()
                         
+    
                     else
-                        FPos(BasePart,CFrame.new(0,-1.5,0),CFrame.Angles(math.rad(-30),0,0))
+
+
+                        FPos(BasePart,CFrame.new(0,-1,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 7.5,CFrame.Angles(math.rad(Angle),0,0))
                         game:GetService("RunService").Heartbeat:wait()
 
                     end
@@ -892,8 +881,8 @@ local rservice = game:GetService("RunService")
         workspace.FallenPartsDestroyHeight = 0/0
         local BV = Instance.new("BodyVelocity")
         BV.Parent = RootPart
-        BV.Velocity = Vector3.new(11e32,11e32,11e32)
-        BV.MaxForce = Vector3.new(1/0, 1/0, 1/0)
+        BV.Velocity = Vector3.new(11e26,11e26,11e26)
+        BV.MaxForce = Vector3.new(1/0.1/0,1/0)
         if TRootPart and THead then
             if (TRootPart.CFrame.p - THead.CFrame.p).Magnitude > 5 then
                 SFBasePart(THead)
@@ -918,11 +907,21 @@ local rservice = game:GetService("RunService")
         workspace.CurrentCamera.CameraSubject = Humanoid
     end
 end
-SkidFling()
+			local playerName = msg:sub(7);
+			local Players = game:GetService("Players");
+			local LocalPlayer = Players.LocalPlayer;
+				for _, player in ipairs(Players:GetPlayers()) do
+					if ((string.lower(player.Name):sub(1, #playerName) == string.lower(playerName)) or (string.lower(player.DisplayName):sub(1, #playerName) == string.lower(playerName))) then
+						if (player == LocalPlayer) then
+							chatmsg("The user you specified is one of your bots!");
+						elseif table.find(bots, player.Name) then
+							chatmsg("The user you specified is one of your bots!");
+						else
+SkidFling(player)
+						end
 					end
 				end
-			end
-	end
+end
 		if (msg:sub(1, 6) == ".goto ") then
 			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
 			local playerName = msg:sub(7);
