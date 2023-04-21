@@ -597,6 +597,34 @@ end
 			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
 			game:GetService("Players"):Chat("/e dance3");
 		end
+						if (msg == ".meditate") then
+			local Anim = Instance.new("Animation");
+			Anim.AnimationId = "rbxassetid://12507085924";
+			local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim);
+			k:Play(0);
+			k:AdjustSpeed(1);
+			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
+			game:GetService("Players").LocalPlayer.Character.Humanoid.Running:connect(function(speed)
+				if (speed > 0) then
+					game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
+					k:Stop(0);
+				end
+			end);
+		end
+				if (msg == ".dance5") then
+			local Anim = Instance.new("Animation");
+			Anim.AnimationId = "rbxassetid://12714233242";
+			local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim);
+			k:Play(0);
+			k:AdjustSpeed(1);
+			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
+			game:GetService("Players").LocalPlayer.Character.Humanoid.Running:connect(function(speed)
+				if (speed > 0) then
+					game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
+					k:Stop(0);
+				end
+			end);
+		end
 		if (msg == ".dance4") then
 			local Anim = Instance.new("Animation");
 			Anim.AnimationId = "rbxassetid://12874447851";
