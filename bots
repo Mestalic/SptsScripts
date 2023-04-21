@@ -802,7 +802,7 @@ end
 			end
 			followPlayer(playerName);
 		end
-		if (msg) == ".fling ") then
+if (msg:sub(1, 6) == ".fling ") then
 		local Targets = args[2]
 		local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
@@ -811,29 +811,6 @@ local AllBool = false
 
 local OldFPDH = workspace.FallenPartsDestroyHeight
 
-local function GetPlayer(Name)
-    Name = Name:lower()
-    if Name == "all" or Name == "others" then
-        AllBool = true
-        return
-    elseif Name == "random" then
-        local GetPlayers = Players:GetPlayers()
-        if table.find(GetPlayers,Player) then table.remove(GetPlayers,table.find(GetPlayers,Player)) end
-        return GetPlayers[math.random(#GetPlayers)]
-    elseif Name ~= "random" and Name ~= "all" and Name ~= "others" then
-        for _,x in next, Players:GetPlayers() do
-            if x ~= Player then
-                if x.Name:lower():match("^"..Name) then
-                    return x;
-                elseif x.DisplayName:lower():match("^"..Name) then
-                    return x;
-                end
-            end
-        end
-    else
-        return
-    end
-end
 
 local function SkidFling(TargetPlayer)
     local Character = Player.Character
@@ -988,22 +965,26 @@ noclip()
         return Message("Error Occurred","Random error",5)
     end
 end
-getgenv().Welcome = true
-if Targets[1] then for _,x in next, Targets do GetPlayer(x) end else return end
 
-if AllBool then
-    for _,x in next, Players:GetPlayers() do
-        SkidFling(x)
-    end
-end
 
-for _,x in next, Targets do
-    if GetPlayer(x) and GetPlayer(x) ~= Player then
-        if GetPlayer(x).UserId ~= 3207813237 and GetPlayer(x).UserId ~= 106305835 and GetPlayer(x).UserId ~= 207865772 then
-            local TPlayer = GetPlayer(x)
-            if TPlayer then
+
+			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
+			local playerName = msg:sub(7);
+			local Players = game:GetService("Players");
+			local LocalPlayer = Players.LocalPlayer;
+			local function gotoPlayer(playerName)
+				for _, TPlayer in ipairs(Players:GetPlayers()) do
+					if ((string.lower(TPlayer.Name):sub(1, #playerName) == string.lower(playerName)) or (string.lower(TPlayer.DisplayName):sub(1, #playerName) == string.lower(playerName))) then
+						if (TPlayer == LocalPlayer) then
+							chatmsg("The user you specified is one of your bots!");
+						elseif table.find(bots, TPlayer.Name) then
+							chatmsg("The user you specified is one of your bots!");
+						else
                 SkidFling(TPlayer)
-            end
+end
+end
+end
+end
 		end
 		if (msg:sub(1, 6) == ".goto ") then
 			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
