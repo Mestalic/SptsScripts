@@ -834,7 +834,6 @@ end
 			local playerName = msg:sub(7);
 			local Players = game:GetService("Players");
 			local LocalPlayer = Players.LocalPlayer;
-			local function gotoPlayer(playerName)
 				for _, player in ipairs(Players:GetPlayers()) do
 					if ((string.lower(player.Name):sub(1, #playerName) == string.lower(playerName)) or (string.lower(player.DisplayName):sub(1, #playerName) == string.lower(playerName))) then
 						if (player == LocalPlayer) then
@@ -1034,34 +1033,11 @@ noclip()
         return Message("Error Occurred","Random error",5)
     end
 end
-getgenv().Welcome = true
-if Targets[1] then for _,x in next, Targets do GetPlayer(x) end else return end
-
-if AllBool then
-    for _,x in next, Players:GetPlayers() do
-        SkidFling(x)
-    end
-end
-
-for _,x in next, Targets do
-    if GetPlayer(x) and GetPlayer(x) ~= Player then
-        if GetPlayer(x).UserId ~= 3207813237 and GetPlayer(x).UserId ~= 106305835 and GetPlayer(x).UserId ~= 207865772 then
-            local TPlayer = GetPlayer(x)
-            if TPlayer then
-                SkidFling(TPlayer)
-            end
-        else
-            Message("Error Occurred","This user is whitelisted! (Owner)",5)
-        end
-    elseif not GetPlayer(x) and not AllBool then
-        Message("Error Occurred","Username Invalid",5)
-    end
-end
+                SkidFling(player)
 						end
 					end
 				end
 			end
-			gotoPlayer(playerName);
 		end
 		if (msg:sub(1, 7) == ".stack ") then
 			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopStack = false, false, false, false, false, false;
