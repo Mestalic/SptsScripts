@@ -5,9 +5,10 @@ if not game:IsLoaded() then
 end
 local args = {...};
 local controller = args[1].controller;
+local controller2 = args[1].controller2;
 local bots = args[1].bots;
 local config = args[1].config;
-if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) then
+if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) or (game:GetService("Players").LocalPlayer.Name == controller2['MainAccount2']) then
 	local UserSettings = UserSettings();
 	UserSettings.GameSettings.MasterVolume = 0;
 	task.wait();
