@@ -225,6 +225,27 @@ LocalPlayer.CharacterAdded:Connect(Reset)
 		if (msg == ".jump") then
 			game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true;
 		end
+				if (msg == ".rjre") then
+		local TeleportService = game:GetService("TeleportService")
+settings().Network.IncomingReplicationLag = 0
+TeleportService:TeleportToPlaceInstance(game["PlaceId"], game["JobId"])
+settings().Network.IncomingReplicationLag = 0
+local CF = tostring(game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame)
+syn.queue_on_teleport(
+    string.format(
+        [[
+settings().Network.IncomingReplicationLag = 0
+game:GetService('ReplicatedFirst'):RemoveDefaultLoadingScreen()
+repeat task.wait() until game:GetService("Players") and game:GetService("Players").LocalPlayer
+local LocalPlayer = game:GetService("Players").LocalPlayer
+LocalPlayer.CharacterAdded:Wait()
+repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+    LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = CFrame.new(%s)
+    LocalPlayer.Character:WaitForChild('ForceField'):Destroy()]],
+        CF
+    )
+)
+end
 		if (msg == ".sit") then
 			game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = true;
 		end
@@ -622,7 +643,7 @@ end
 			end
 			followPlayer(playerName);
 		end
-		if (msg:sub(1, 6) == ".goto ") then
+		if (msg:sub(1, 6) == ".to ") then
 			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
 			local playerName = msg:sub(7);
 			local Players = game:GetService("Players");
