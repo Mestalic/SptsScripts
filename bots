@@ -517,6 +517,9 @@ coroutine.wrap(function()
     end
 end)()
 				end
+			if (msg == ".anchor") then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+			end
 			if (msg == ".rhand") then
 game.Players.LocalPlayer.Character.RightHand:remove()
 			end
