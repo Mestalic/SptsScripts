@@ -222,7 +222,226 @@ LocalPlayer.CharacterAdded:Connect(Reset)
 			elseif (game.Players.LocalPlayer.Name ~= bots[1]) then
 			end
 		end
-		if (msg == ".jump") then
+		if (msg == ".mhatfling") then
+		_G.Whitelist = {
+    508960114,
+}
+
+
+if (not game:IsLoaded()) then
+	game.Loaded:Wait();
+end
+for _, obj in ipairs(workspace:GetDescendants()) do
+    if obj:IsA("Seat") and obj.Occupant == nil then
+        seat = obj
+        obj:Sit(game.Players.LocalPlayer.Character.Humanoid)
+        break
+    end
+end
+local lp = game.Players.LocalPlayer
+
+repeat wait() until lp and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") and lp.Character:FindFirstChild("Animate")
+lp.Character.RightHand:remove()
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+local File = pcall(function()
+    AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+end)
+if not File then
+    table.insert(AllIDs, actualHour)
+    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+end
+function TPReturner()
+    local Site;
+    if foundAnything == "" then
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+    else
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+    end
+    local ID = ""
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+        foundAnything = Site.nextPageCursor
+    end
+    local num = 0;
+    for i,v in pairs(Site.data) do
+        local Possible = true
+        ID = tostring(v.id)
+        if tonumber(v.maxPlayers) > tonumber(v.playing) then
+            for _,Existing in pairs(AllIDs) do
+                if num ~= 0 then
+                    if ID == tostring(Existing) then
+                        Possible = false
+                    end
+                else
+                    if tonumber(actualHour) ~= tonumber(Existing) then
+                        local delFile = pcall(function()
+                            delfile("NotSameServers.json")
+                            AllIDs = {}
+                            table.insert(AllIDs, actualHour)
+                        end)
+                    end
+                end
+                num = num + 1
+            end
+            if Possible == true then
+                table.insert(AllIDs, ID)
+                wait()
+                pcall(function()
+                    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                    wait()
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                end)
+                wait(4)
+            end
+        end
+    end
+end
+
+function Teleport()
+    while wait() do
+        pcall(function()
+            TPReturner()
+            if foundAnything ~= "" then
+                TPReturner()
+            end
+        end)
+    end
+end
+
+-- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
+--rescale hat by AnthonyIsntHere (old as fuck)
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+
+local Player = Players.LocalPlayer
+local Mouse = Player:GetMouse()
+
+local function Message(MTitle,MText,Time)
+    game:GetService("StarterGui"):SetCore("SendNotification",{Title = MTitle,Text = MText,Icon = "rbxassetid://2541869220",Duration = Time})
+end
+
+local PlayerMetaVars = {}
+
+PlayerMetaVars["Character"] = Player.Character or false
+PlayerMetaVars["Humanoid"] = PlayerMetaVars["Character"] and PlayerMetaVars["Character"]:FindFirstChildOfClass("Humanoid") or false
+PlayerMetaVars["RootPart"] = PlayerMetaVars["Humanoid"] and PlayerMetaVars["Humanoid"].RootPart or false
+PlayerMetaVars["Head"] = PlayerMetaVars["Character"] and PlayerMetaVars["Character"]:FindFirstChild("Head") or false
+PlayerMetaVars["Torso"] = PlayerMetaVars["Character"] and PlayerMetaVars["Character"]:FindFirstChild("Torso") or PlayerMetaVars["Character"] and PlayerMetaVars["Character"]:FindFirstChild("UpperTorso") or false
+
+local ErrorCheck = false
+
+for _,x in next, PlayerMetaVars do
+    if not x then
+        Message("Error:", _.." not valid.")
+        ErrorCheck = true
+    end
+end
+
+if ErrorCheck then return end
+
+coroutine.wrap(function()
+    for _,x in next, PlayerMetaVars.Humanoid:GetChildren() do
+        if x:IsA("ValueBase") then
+            for _,v in next, PlayerMetaVars.Humanoid:GetAccessories() do
+                if v:FindFirstChild("OriginalSize", true) then
+                    v:FindFirstChild("OriginalSize", true):Destroy()
+                end
+            end
+            x:Destroy()
+            PlayerMetaVars.Humanoid:GetAccessories()[#PlayerMetaVars.Humanoid:GetAccessories()].DescendantAdded:wait()
+            task.wait()
+        end
+    end
+end)()
+--funny hat fling
+local function netpos(basepart, pos, vel)
+    basepart.CFrame = (pos)
+    basepart.Velocity = Vector3.new(vel, 0, 0)
+    local old = basepart.CFrame
+    basepart.CFrame = basepart.CFrame * CFrame.new(0, 0.05, 0)
+    basepart.CFrame = old
+    basepart.Velocity = Vector3.new(0, vel, 0)
+end
+Player.Character = nil
+Player.Character = PlayerMetaVars.Character
+wait(Players.RespawnTime + 0.4)
+if game.PlaceId == 417267366 then
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5500, 33, -17112)
+end
+-- HUGE CREDITS TO SHOWNAPE FOR METHOD
+PlayerMetaVars.RootPart:Destroy()
+table.foreach(PlayerMetaVars.Character:GetChildren(), function(_,v)
+    if v:IsA("BasePart") and v.Name ~= "Head" then
+        v:Destroy()
+    end
+end)
+PlayerMetaVars.Head:Destroy()
+
+local oldcf = PlayerMetaVars.RootPart.CFrame
+
+for _,x in next, PlayerMetaVars.Humanoid:GetAccessories() do
+    local Handle = x:FindFirstChild("Handle") or false
+    local AccWeld = Handle and Handle:FindFirstChild("AccessoryWeld") or false
+    if not Handle or not AccWeld then return Message("Error", "Handle Missing.") end
+    AccWeld:Destroy()
+    local fling = Instance.new("BodyAngularVelocity", Handle)
+    fling.MaxTorque = Vector3.new(1/0,1/0,1/0)
+    fling.AngularVelocity = Vector3.new(9e11,9e11,9e11)
+    coroutine.wrap(function()
+Workspace.CurrentCamera.CameraSubject = Handle
+        while Player.Character == PlayerMetaVars.Character and Handle do
+            netpos(Handle, Handle.CFrame * CFrame.new(0, 0.1, 0), 100)
+            for _,x in next, Players:GetPlayers() do
+                local xCharacter = x.Character or false
+                local xHumanoid = xCharacter and xCharacter:FindFirstChildWhichIsA("Humanoid") or false
+                local xPrimaryPart = xCharacter and xCharacter.PrimaryPart or false
+                if x ~= Player and xCharacter and xHumanoid and not (xHumanoid.SeatPart or xHumanoid.Sit) and xPrimaryPart then
+    					  if x ~= game.Players.LocalPlayer and not table.find(_G.Whitelist, x.UserId) then
+                    if xPrimaryPart.Velocity.Magnitude < 300 then
+                        netpos(Handle, x.Character.PrimaryPart.CFrame, 100)
+                    end
+                else
+                    if x ~= Player then
+                        netpos(Handle, oldcf, 100)
+                    end
+                end
+            end
+            RunService.Heartbeat:wait()
+                end
+            end
+    end)()
+    coroutine.wrap(function()
+        while PlayerMetaVars.Character and Handle do
+            Handle.CanCollide = false
+            RunService.Stepped:wait()
+        end
+    end)()
+end
+
+local save = {}
+		
+		for i,v in next, workspace:GetChildren() do
+			if v:IsA'Model' then
+				if not game.Players:GetPlayerFromCharacter(v) then
+					save[#save + 1] = v
+				end
+			else
+				if v.ClassName == "Part" then
+					save[#save + 1] = v
+				end
+			end
+		end
+		
+		for i,v in next, save do
+			v.Parent = game.Lighting
+		end
+		end
+				if (msg == ".jump") then
 			game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true;
 		end
 				if (msg == ".rjre") then
