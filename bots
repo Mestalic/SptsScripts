@@ -234,7 +234,8 @@ LocalPlayer.CharacterAdded:Connect(Reset)
 							chatmsg("The user you specified is one of your bots!");
 						else
 local Targets = player
-
+end
+end
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 
@@ -424,8 +425,6 @@ noclip()
     else
         return Message("Error Occurred","Random error",5)
     end
-end
-end
 end
                 SkidFling(player)
 
