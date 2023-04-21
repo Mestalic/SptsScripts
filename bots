@@ -6,7 +6,7 @@ end
 local args = {...};
 local controller = args[1].controller or {           
   ["MainAccount"] = "Mestalic",
-  ["MainAccount2"] = "7997968"
+  ["MainAccount"] = "7997968"
 };
 local bots = args[1].bots;
 local config = args[1].config;
