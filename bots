@@ -742,7 +742,7 @@ end
             workspace.FallenPartsDestroyHeight = 0 / 0
 							getgenv().LoopSwarm = true;
 							while getgenv().LoopSwarm == true do
-								game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[plr.Name].HumanoidRootPart.CFrame * CFrame.new(math.random(-9, 9), 0, math.random(-8, 8));
+								game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[plr.Name].HumanoidRootPart.CFrame * CFrame.new(math.random(-6, 6), 0, math.random(-8, 8));
 								task.wait();
 							end
 						end
