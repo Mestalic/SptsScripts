@@ -10,15 +10,8 @@ local config = args[1].config;
 if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) then
 	local UserSettings = UserSettings();
 	UserSettings.GameSettings.MasterVolume = 0;
-	task.wait();
 	setfpscap(30);
-	task.wait();
 	game:GetService("RunService"):Set3dRenderingEnabled(false);
-	task.wait();
-	game:GetService("Players").LocalPlayer.PlayerGui:Destroy();
-	task.wait();
-	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, false);
-	task.wait();
 	for i, v in next, workspace:GetDescendants() do
 		if v:IsA("Seat") then
 			v:Destroy();
