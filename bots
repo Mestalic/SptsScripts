@@ -110,33 +110,30 @@ if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']
 			game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = true;
 		end
 		if (msg == ".leg") then
-			local function delete()
-				game.Players.LocalPlayer.Character.LeftFoot.OriginalSize:Destroy();
-				game.Players.LocalPlayer.Character.LeftLowerLeg.OriginalSize:Destroy();
-				game.Players.LocalPlayer.Character.LeftUpperLeg.OriginalSize:Destroy();
-			end
-			local function makeNew()
-				local thing = Instance.new("Vector3Value", game.Players.LocalPlayer.Character.LeftFoot);
-				thing.Name = "OriginalSize";
-				local thing = Instance.new("Vector3Value", game.Players.LocalPlayer.Character.LeftLowerLeg);
-				thing.Name = "OriginalSize";
-				local thing = Instance.new("Vector3Value", game.Players.LocalPlayer.Character.LeftUpperLeg);
-				thing.Name = "OriginalSize";
-			end
-			if (game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15) then
-				game.Players.LocalPlayer.Character.LeftLowerLeg.LeftKneeRigAttachment.OriginalPosition:Destroy();
-				game.Players.LocalPlayer.Character.LeftUpperLeg.LeftKneeRigAttachment.OriginalPosition:Destroy();
-				game.Players.LocalPlayer.Character.LeftLowerLeg.LeftKneeRigAttachment:Destroy();
-				game.Players.LocalPlayer.Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy();
-				for i, v in next, game.Players.LocalPlayer.Character.Humanoid:GetChildren() do
-					if v:IsA("NumberValue") then
-						delete();
-						v:Destroy();
-						makeNew();
-						task.wait(0.3);
-					end
-				end
-			end
+local Character = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Animate:remove()
+Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()
+Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()
+Character.LeftFoot.LeftFootAttachment:Destroy()
+for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+    v:Stop()
+end
+
+local function scale()
+    game.Players.LocalPlayer.Character["LeftFoot"]:WaitForChild'OriginalSize':Destroy()
+    
+game.Players.LocalPlayer.Character["LeftLowerLeg"]:WaitForChild'OriginalSize':Destroy()
+    
+game.Players.LocalPlayer.Character["LeftUpperLeg"]:WaitForChild'OriginalSize':Destroy()
+end
+
+
+for i,v in next, game.Players.LocalPlayer.Character.Humanoid:GetChildren() do
+    if v:IsA'NumberValue' then
+        scale()
+        v:Destroy()
+     end
+end
 		end
 		if (msg == ".rescale") then
 			local character = game:GetService("Players").LocalPlayer.Character;
@@ -992,7 +989,36 @@ Character.HumanoidRootPart.Anchored = true
 				end
 			end
 		end
-		if (msg:sub(1, 6) == ".line ") then
+				if (msg:sub(1, 6) == ".line ") then
+			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
+			local player = game:GetService("Players"):GetPlayers()[(function()
+				for i, plr in ipairs(game:GetService("Players"):GetPlayers()) do
+					if ((string.lower(plr.Name):sub(1, string.len(msg:sub(7))) == string.lower(msg:sub(7))) or (string.lower(plr.DisplayName):sub(1, string.len(msg:sub(7))) == string.lower(msg:sub(7)))) then
+						return i;
+					end
+				end
+				return nil;
+			end)()];
+			if player then
+				local botIndex = 1;
+				for i, botName in pairs(bots) do
+					if (string.lower(botName) == string.lower(game:GetService("Players").LocalPlayer.Name)) then
+						botIndex = i;
+						break;
+					end
+				end
+				local offsets = {-2,-4,-6,-8,-10,-12,-14,-16,-18,-20,-22,-24,-26,-28,-30,-32,-34,-36,-38,-40};
+				local offset = offsets[botIndex] or 0;
+				if (player == game:GetService("Players").LocalPlayer) then
+					chatmsg("The user you specified is one of your bots!");
+				elseif table.find(bots, player.Name) then
+					chatmsg("The user you specified is one of your bots!");
+				else
+						game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame * CFrame.new(0, 0, offset);
+				end
+			end
+		end
+		if (msg:sub(1, 6) == ".lline ") then
 			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
 			local player = game:GetService("Players"):GetPlayers()[(function()
 				for i, plr in ipairs(game:GetService("Players"):GetPlayers()) do
@@ -1186,7 +1212,7 @@ Character.HumanoidRootPart.Anchored = true
 			FaggotFucktard:Destroy();
 		end
 		if (msg == ".sv") then
-			game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(".gg/hear", "All");
+			game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Mestalic betar XD", "All");
 		end
 		if (msg == ".unlookat") then
 			getgenv().LoopLook = false;
