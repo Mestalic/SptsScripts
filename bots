@@ -1261,5 +1261,8 @@ Character.HumanoidRootPart.Anchored = true
 			elseif (game.Players.LocalPlayer.Name ~= bots[1]) then
 			end
 		end
-	end);
+	end
+end
+end
+)
 end
