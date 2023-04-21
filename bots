@@ -605,6 +605,7 @@ for i,v in pairs(cmdlp.Character.Humanoid:GetPlayingAnimationTracks()) do
     v:Stop()
 end
 coroutine.resume(coroutine.create(function()
+animationdebounce = false
 while not animationdebounce do
     local Anim = Instance.new("Animation")
     Anim.AnimationId = "rbxassetid://12874447851"
