@@ -66,7 +66,7 @@ if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']
 			local say_msg = string.sub(msg, string.len(cmd) + 2, string.len(msg));
 			getgenv().LoopSlowSpam = true;
 			while getgenv().LoopSlowSpam == true do
-				task.wait(2);
+				task.wait(2.16);
 				ohString1 = say_msg;
 				chatmsg(ohString1);
 			end
