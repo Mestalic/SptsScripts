@@ -786,7 +786,7 @@ end
 				chatmsg("The answer to the equation you sent is: " .. tostring(result));
 			end
 		end
-		if (msg and (#msg >= 7) and (msg:sub(1, 7) == ".runlua")) then
+		if (msg and (#msg >= 7) and (msg:sub(1, 7) == ".execute")) then
 			local luaCode = msg:sub(9);
 			if (#luaCode == 0) then
 				chatmsg("There must be code after the .runlua command! | Usage: .runlua <code>");
