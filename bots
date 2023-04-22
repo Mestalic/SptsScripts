@@ -210,7 +210,9 @@ LocalPlayer.CharacterAdded:Connect(Reset)
 		game.Players.LocalPlayer:Kick()
 		end
 		if (msg == ".stats") then
-		function Chat(String)
+			if (game.Players.LocalPlayer.Name == bots[1]) then
+				task.wait();
+						function Chat(String)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(String,"All")
 end
 local Stats = game:GetService("Stats");
@@ -219,7 +221,11 @@ local FpsManager = Stats.FrameRateManager
 Chat("Current Ping: " .. tostring(CurrentPing))
 task.wait(0.05)
 Chat("Current FPS: "..math.round(1000 / FpsManager.RenderAverage:GetValue()))
+elseif (game.Players.LocalPlayer.Name ~= bots[1]) then
+			end
 		end
+		end
+		
 		if (msg == ".cmds") then
 			if (game.Players.LocalPlayer.Name == bots[1]) then
 				task.wait();
