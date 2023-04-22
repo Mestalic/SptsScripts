@@ -816,7 +816,7 @@ end
 				elseif table.find(bots, player.Name) then
 					chatmsg("The user you specified is one of your bots!");
 				else
-						game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame * CFrame.new(offset, 0, offset2);
+						game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame * CFrame.new(offset2, 0, offset);
 				end
 			end
 		end
