@@ -10,7 +10,7 @@ if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']
 	local UserSettings = UserSettings();
 	UserSettings.GameSettings.MasterVolume = 0;
 	task.wait();
-	setfpscap(45);
+	setfpscap(30);
 	task.wait();
 	game:GetService("RunService"):Set3dRenderingEnabled(false);
 	task.wait();
@@ -42,7 +42,7 @@ for i, botName in ipairs(bots) do
 	if ((game:GetService("Players").LocalPlayer.Name == botName) and (config['SendJoinMsg'] == true)) then
 		ohString1 = "Hia guwys! >.< [Bot " .. i .. " of " .. #bots .. "]";
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, "All");
-		setfpscap(45)
+		setfpscap(30)
 	end
 end
 if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) then
