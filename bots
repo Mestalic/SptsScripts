@@ -1160,7 +1160,7 @@ local Char = game.Players.LocalPlayer.Character
     game.Players.LocalPlayer.Character = Model
     game.Players.LocalPlayer.Character = Char
     Destroy(Model)
-task.wait(game.Players.RespawnTime - 0.15)
+task.wait(game.Players.RespawnTime - 0.07)
 local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
 	for i,v in next, game.Players.LocalPlayer.Character:GetDescendants() do
 		if v:IsA("Accessory") then
