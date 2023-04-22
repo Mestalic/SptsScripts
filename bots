@@ -851,7 +851,6 @@ local offset = lineOffsets[lineIndex] + colOffsets[colIndex] -- Combine the line
 				else
 						game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame * CFrame.new(offset, 0, 0);
 				end
-			end
 		end
 		end
 		if (msg:sub(1, 6) == ".line ") then
