@@ -43,7 +43,7 @@ for i, botName in ipairs(bots) do
 		ohString1 = "Hia guwys! >.< [Bot " .. i .. " of " .. #bots .. "]";
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, "All");
 		task.wait();
-		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("poopie >:D", "All");
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("poopie XD", "All");
 	end
 end
 if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) then
