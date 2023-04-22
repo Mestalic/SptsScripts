@@ -588,7 +588,7 @@ char.HumanoidRootPart.CFrame = CFrame.new(0,9e9,17876)
 task.wait(0.1)
 char.HumanoidRootPart.Anchored = true
 end
-while wait(8) do --// don't change it's the best
+while wait(1.34) do --// don't change it's the best
 game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
 local function getmaxvalue(val)
    local mainvalueifonetable = 499999
