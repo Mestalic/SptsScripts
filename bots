@@ -808,19 +808,18 @@ end
 						break;
 					end
 				end
-local lineOffsets = {-12, 0, 12} -- X offsets for the 3 lines
-local colOffsets = {-16, 0, 16} -- Z offsets for the 3 columns
-local lineIndex = math.floor((botIndex - 1) / 3) + 1 -- Calculate which line the bot should be in (1, 2, or 3)
+local rowOffsets = {20, 0, -20} -- Z offsets for the 3 rows
+local colOffsets = {-20, 0, 20} -- X offsets for the 3 columns
+local rowIndex = math.floor((botIndex - 1) / 3) + 1 -- Calculate which row the bot should be in (1, 2, or 3)
 local colIndex = (botIndex - 1) % 3 + 1 -- Calculate which column the bot should be in (1, 2, or 3)
-local offset = lineOffsets[lineIndex] + colOffsets[colIndex] -- Combine the line and column offsets
+local offset = Vector3.new(colOffsets[colIndex], 0, rowOffsets[rowIndex]) -- Combine the row and column offsets
 				if (player == game:GetService("Players").LocalPlayer) then
 					chatmsg("The user you specified is one of your bots!");
 				elseif table.find(bots, player.Name) then
 					chatmsg("The user you specified is one of your bots!");
 				else
 						
-				       game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame * CFrame.new(offset, 0, 0)
-
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame + offset
 				end
 			end
 		end
