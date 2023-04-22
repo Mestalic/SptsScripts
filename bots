@@ -207,10 +207,8 @@ LocalPlayer.CharacterAdded:Connect(Reset)
 				end
 		if (msg == ".rj") then
 			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Rejoining...", "All");
-			while true do
 						game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer);
-		wait(1.3)
-		end
+		game.Players.LocalPlayer:Kick()
 		end
 		if (msg == ".cmds") then
 			if (game.Players.LocalPlayer.Name == bots[1]) then
