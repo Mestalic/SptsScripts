@@ -1078,11 +1078,29 @@ end
 							local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart");
 							if humanoidRootPart then
 							game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = false
+							        for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.Velocity, v.RotVelocity, v.AssemblyAngularVelocity, v.AssemblyLinearVelocity =
+                    Vector3.new(),
+                    Vector3.new(),
+                    Vector3.new(),
+                    Vector3.new()
+            end
+        end
 							wait()
 								LocalPlayer.Character.HumanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.new(0, 0, -2);
 								task.wait();
 								LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.lookAt(LocalPlayer.Character.HumanoidRootPart.Position, player.Character.HumanoidRootPart.Position);
 								task.wait();
+								        for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.Velocity, v.RotVelocity, v.AssemblyAngularVelocity, v.AssemblyLinearVelocity =
+                    Vector3.new(),
+                    Vector3.new(),
+                    Vector3.new(),
+                    Vector3.new()
+            end
+        end
 							end
 						end
 					end
