@@ -535,6 +535,9 @@ coroutine.wrap(function()
     end
 end)()
 				end
+				if (msg == ".unanchor") then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+			end
 			if (msg == ".anchor") then
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 			end
