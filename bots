@@ -807,7 +807,7 @@ end
 						break;
 					end
 				end
-				local offsets2 = {-2,-4,-6,-8,-10,-12,-14};
+				local offsets2 = {4,8,-4,-8,12,-12,16,-16};
 				local offsets = {4,8,-4,-8,12,-12,16,-16};
 				local offset2 = offsets2[botIndex] or 0;
 				local offset = offsets[botIndex] or 0;
