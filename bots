@@ -225,8 +225,7 @@ Chat("Current FPS: "..math.round(1000 / FpsManager.RenderAverage:GetValue()))
 elseif (game.Players.LocalPlayer.Name ~= bots[1]) then
 			end
 		end
-		end
-		
+
 		if (msg == ".cmds") then
 			if (game.Players.LocalPlayer.Name == bots[1]) then
 				task.wait();
