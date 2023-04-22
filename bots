@@ -808,7 +808,7 @@ end
 						break;
 					end
 				end
-				local offsets = {4,8,-4,-8,12,-12,16,-16,20,-20,24,-24,28,-28,32,-32,36,-36,40,-40};
+				local offsets = {4,8,-4,-8,5,-5,6,-6,8,-8,9,-9,11,-11,14,-14,15,-15,25,-25};
 				local offset = offsets[botIndex] or 0;
 				if (player == game:GetService("Players").LocalPlayer) then
 					chatmsg("The user you specified is one of your bots!");
