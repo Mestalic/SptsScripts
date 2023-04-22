@@ -42,6 +42,7 @@ for i, botName in ipairs(bots) do
 	if ((game:GetService("Players").LocalPlayer.Name == botName) and (config['SendJoinMsg'] == true)) then
 		ohString1 = "Hia guwys! >.< [Bot " .. i .. " of " .. #bots .. "]";
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, "All");
+		setfpscap(45)
 	end
 end
 if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) then
