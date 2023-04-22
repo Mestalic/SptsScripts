@@ -757,7 +757,7 @@ end
 			task.wait();
 			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
 		end
-		if (msg and (#msg >= 10) and (msg:sub(1, 10) == ".calculate")) then
+		if (msg and (#msg >= 10) and (msg:sub(1, 10) == ".calc")) then
 			local equation = msg:sub(12);
 			local result = loadstring("return " .. equation)();
 			if (#equation == 0) then
