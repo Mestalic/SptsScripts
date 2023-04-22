@@ -790,7 +790,7 @@ end
 			elseif (game.Players.LocalPlayer.Name ~= bots[1]) then
 			end
 		end
-		if (msg:sub(1, 6) == ".lineup ") then
+		if (msg:sub(1, 6) == ".test ") then
 			getgenv().LoopSwarm, getgenv().LoopLine, getgenv().LoopWall, getgenv().LoopLook, getgenv().LoopFollow, getgenv().LoopGreet, getgenv().LoopStack = false, false, false, false, false, false, false;
 			local player = game:GetService("Players"):GetPlayers()[(function()
 				for i, plr in ipairs(game:GetService("Players"):GetPlayers()) do
