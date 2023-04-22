@@ -465,7 +465,7 @@ repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart"
     )
 )
 end
-		if (msg == ".close") then
+		if (msg == ".shutdown") then
 				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Closing...", "All");
 				wait(0.1)
 		game:Shutdown()
