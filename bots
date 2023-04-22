@@ -631,7 +631,7 @@ for i = 1, tries do
 end
 end
  
-bomb(220, 4) --// change values if client crashes
+bomb(160, 3) --// change values if client crashes
 end
 end
 			if (msg == ".rhand") then
