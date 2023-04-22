@@ -1155,6 +1155,34 @@ end
 		if (msg == ".re") then
 			game.Players.LocalPlayer.Character.Humanoid.Health = 0;
 		end
+		if (msg == ".re3") then
+		  local plr = game.Players.LocalPlayer
+local InstanceNew = Instance.new
+    local Destroy, Clone = game.Destroy, game.Clone
+local Char = game.Players.LocalPlayer.Character
+    local Model = InstanceNew("Model")
+    game.Players.LocalPlayer.Character = Model
+    game.Players.LocalPlayer.Character = Char
+    Destroy(Model)
+task.wait(game.Players.RespawnTime - 0.3)
+local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+	for i,v in next, game.Players.LocalPlayer.Character:GetDescendants() do
+		if v:IsA("Accessory") then
+			for i,p in next, v:GetDescendants() do
+				if p:IsA("Weld") then
+					p:Destroy()
+				end
+			end
+		end
+	end
+game.Players.LocalPlayer.Character:BreakJoints()
+game.Players.LocalPlayer.Character:remove()
+				plr.CharacterAdded:Wait()
+				plr.Character:WaitForChild("Humanoid")
+				game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+			repeat task.wait() until plr.Character:FindFirstChild("ForceField")
+			plr.Character.ForceField:remove()
+			end
 		if (msg == ".re2") then
 			local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame;
 			game.Players.LocalPlayer.Character = nil;
