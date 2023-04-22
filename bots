@@ -843,14 +843,16 @@ local offset = lineOffsets[lineIndex] + colOffsets[colIndex] -- Combine the line
 					end
 				end
 				local offsets = {4,8,-4,-8,12,-12,16,-16,20,-20,24,-24,28,-28,32,-32,36,-36,40,-40};
-
+				local offset = offsets[botIndex] or 0;
 				if (player == game:GetService("Players").LocalPlayer) then
 					chatmsg("The user you specified is one of your bots!");
 				elseif table.find(bots, player.Name) then
 					chatmsg("The user you specified is one of your bots!");
 				else
-				 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame * CFrame.new(offset, 0, 0);
-end
+						game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = workspace[player.Name].HumanoidRootPart.CFrame * CFrame.new(offset, 0, 0);
+				end
+			end
+		end
 			end
 		end
 		if (msg:sub(1, 6) == ".line ") then
