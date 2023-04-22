@@ -602,6 +602,7 @@ end
 							game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
 			task.wait();
 			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
+			wait()
 			local Anim = Instance.new("Animation");
 			Anim.AnimationId = "rbxassetid://12714233242";
 			local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim);
@@ -619,6 +620,7 @@ end
 					game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
 			task.wait();
 			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
+			wait()
 			local Anim = Instance.new("Animation");
 			Anim.AnimationId = "rbxassetid://12874447851";
 			local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim);
