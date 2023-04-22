@@ -204,8 +204,8 @@ end;
 LocalPlayer.CharacterAdded:Connect(Reset)
 				end
 		if (msg == ".rj") then
-			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Rejoining...", "All");
 						game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer);
+					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Rejoining...", "All");
 		wait(0.1)
 		game.Players.LocalPlayer:Kick()
 		end
