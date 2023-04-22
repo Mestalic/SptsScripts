@@ -567,13 +567,12 @@ char.HumanoidRootPart.CFrame = CFrame.new(0,9e9,17876)
 task.wait(0.1)
 char.HumanoidRootPart.Anchored = true
 end
-while true do --// don't change it's the best
+while wait(5) do --// don't change it's the best
 game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
 local function getmaxvalue(val)
    local mainvalueifonetable = 499999
    if type(val) ~= "number" then
        return nil
-wait(4.5)
    end
    local calculateperfectval = (mainvalueifonetable/(val+2))
    return calculateperfectval
