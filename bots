@@ -599,6 +599,9 @@ end
 		end
 						
 				if (msg == ".dance5") then
+							game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
+			task.wait();
+			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
 			local Anim = Instance.new("Animation");
 			Anim.AnimationId = "rbxassetid://12714233242";
 			local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim);
@@ -613,6 +616,9 @@ end
 			end);
 		end
 		if (msg == ".dance4") then
+					game:GetService("Players").LocalPlayer.Character.Animate.Disabled = true;
+			task.wait();
+			game:GetService("Players").LocalPlayer.Character.Animate.Disabled = false;
 			local Anim = Instance.new("Animation");
 			Anim.AnimationId = "rbxassetid://12874447851";
 			local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim);
