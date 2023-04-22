@@ -42,8 +42,6 @@ for i, botName in ipairs(bots) do
 	if ((game:GetService("Players").LocalPlayer.Name == botName) and (config['SendJoinMsg'] == true)) then
 		ohString1 = "Hia guwys! >.< [Bot " .. i .. " of " .. #bots .. "]";
 		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, "All");
-		task.wait();
-		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("sss2ss", "All");
 	end
 end
 if not (game:GetService("Players").LocalPlayer.Name == controller['MainAccount']) then
