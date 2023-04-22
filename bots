@@ -807,8 +807,8 @@ end
 						break;
 					end
 				end
-				local offsets2 = {2,4,6,8,10,12,14-16,18,20,22,24};
-				local offsets = {-2,-4,-6,-8,-10,-12,-14,-16,-18,-20,-22,-24};
+				local offsets2 = {2,4,6,8,10,12};
+				local offsets = {-2,-4,-6,-8,-10,-12};
 				local offset2 = offsets2[botIndex] or 0;
 				local offset = offsets[botIndex] or 0;
 				if (player == game:GetService("Players").LocalPlayer) then
