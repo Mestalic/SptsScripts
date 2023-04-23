@@ -207,7 +207,7 @@ LocalPlayer.CharacterAdded:Connect(Reset)
 		if (msg == ".rj") then
 						game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer);
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Rejoining...", "All");
-		wait(0.1)
+		wait(0.25)
 		game.Players.LocalPlayer:Kick()
 		end
 		if (msg == ".stats") then
