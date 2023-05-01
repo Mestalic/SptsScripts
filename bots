@@ -1200,7 +1200,7 @@ game.Players.LocalPlayer.Character:remove()
 			FaggotFucktard:Destroy();
 		end
 		if (msg == ".script") then
-			game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("No its not skidded add Mestalic2007 for proof", "All");
+			game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer("Mestalic2007 Is my maker", "All");
 		end
 		if (msg == ".unlookat") then
 			getgenv().LoopLook = false;
