@@ -86,6 +86,7 @@ function handler(msg,speaker)
    for i,v in next, words do
       if string.match(string.lower(msg),i) then
          players:ReportAbuse(players[speaker],v,'They are breaking roblox TOS')
+         notify('Autoreport','Autoreported ' .. speaker .. ' | offensive part: ' .. i)
          if autoreportcfg.Webhook ~= nil and autoreportcfg.Webhook ~= '' and autoreportcfg.Webhook ~= ' ' then
          local data = 
          {
@@ -136,7 +137,6 @@ function handler(msg,speaker)
          }
      };
      request(abcdef);
-     notify('Autoreport','Autoreported ' .. speaker .. ' | offensive part: ' .. i)
      wait(1.5)
      players:ReportAbuse(players[speaker],v,'They are breaking roblox TOS')
      else
