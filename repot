@@ -71,7 +71,7 @@ function notify(title, text)
     notifs:MakeNotification({
         Name = title,
         Content = text,
-        Time = 1
+        Time = 2
     });
 end;
 
