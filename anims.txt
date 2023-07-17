@@ -1,18 +1,52 @@
-
-  wait()
-local IDs={
-    ClimbAnim   = 1069946257,
-    FallAnim    = 1069973677,
-    Idle1       = 1149612882,
-    Idle2       = 1150842221,
-    Jump        = 1069984524,
-    Run         = 1132494274,
-    Swim        = 616165109,
-    SwimIdle    = 616166655,
-    Walk        = 1132510133,
-}
-
+repeat task.wait() until game:IsLoaded()
+game:GetService("StarterPlayer")["AllowCustomAnimations"] = true
 --[[
+r15 strafe
+run forward 10319882993
+strafing run right 10404627994
+run back 10358526981
+run back left 10382960556
+run forward left 10319903622
+tony forward 10899968825
+strafing run left 10404604071
+idle 507766388
+walk strafe right 10404404615
+run backwards right 10382949241
+walk backwards 10358505520
+walk backwards left 10382771806
+strafe walk left 10404377900
+tony walk 10921541949
+strafing walk forward right 10404269576
+idle 2 507766666
+strafing walk forward left 10404251500
+strafe walk2 right 10847107747
+walk backwords right 10382635795
+fall 507767968
+
+zombies
+jump 616161997
+fall 616157476
+run 3489173414
+walk 3489174223
+idle 3489171152
+dance 4049037604
+dance 2 4555808220
+Old R15
+run 4211220381
+jump 4211219390
+walk 4211223236
+fall 4211216152
+fidgetidle 4211218409
+R15 2016
+Idle 1 387947158
+idle 2 387947464
+climb 387946868
+jump 387946624
+run 387947975
+idle yawn 387947796
+Locomoti
+4211217646 idle1
+idle2 4211218409
  > Confident
     ClimbAnim   = 1069946257,
     FallAnim    = 1069973677,
@@ -91,37 +125,46 @@ local IDs={
     Walk        = 1132510133,
 ]]
 
+local IDs = {
+    ClimbAnim = 1132461372,
+    FallAnim = 616157476,
+    Idle1 = 3489171152,
+    Idle2 = 387947464,
+    Run = 3489173414,
+    Walk = 3489174223,
+    Jump = 616161997,
+    Swim = 616165109,
+    SwimIdle = 1014411816,
+}
 
-for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
-    v:Stop()
+local function applyAnimations()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    character:WaitForChild('Humanoid')
+
+    if character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+        character:WaitForChild("Animate")
+wait()
+        for i,v in pairs(character.Humanoid:GetPlayingAnimationTracks()) do
+            v:Stop()
+        end
+ wait()
+        character.Animate.climb.ClimbAnim.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.ClimbAnim
+        character.Animate.fall.FallAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.FallAnim
+        character.Animate.idle.Animation1.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle1
+        character.Animate.idle.Animation2.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle2
+        character.Animate.run.RunAnim.AnimationId        = "http://www.roblox.com/asset/?id="..IDs.Run
+        character.Animate.swim.Swim.AnimationId          = "http://www.roblox.com/asset/?id="..IDs.Swim
+        character.Animate.swimidle.SwimIdle.AnimationId  = "http://www.roblox.com/asset/?id="..IDs.SwimIdle
+        character.Animate.walk.WalkAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Walk
+        character.Animate.jump.JumpAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Jump
+        character.Animate.idle.Animation2.Weight.Value   = "1"
+        character.Animate.idle.Animation1.Weight.Value   = "10"
+    end
 end
-
-game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.ClimbAnim
-game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.FallAnim
-game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle1
-game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle2
-game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Jump
-game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId        = "http://www.roblox.com/asset/?id="..IDs.Run
-game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId          = "http://www.roblox.com/asset/?id="..IDs.Swim
-game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId  = "http://www.roblox.com/asset/?id="..IDs.SwimIdle
-game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Walk
-game.Players.LocalPlayer.Character.Animate.idle.Animation2.Weight.Value   = "1"; game.Players.LocalPlayer.Character.Animate.idle.Animation1.Weight.Value   = "10"
+wait(0.5)
+applyAnimations()
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
-game.Players.LocalPlayer.Character:WaitForChild('Humanoid')
-wait(0.2)
-for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
-    v:Stop()
-end
-
-game.Players.LocalPlayer.Character.Animate.climb.ClimbAnim.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.ClimbAnim
-game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.FallAnim
-game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle1
-game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId    = "http://www.roblox.com/asset/?id="..IDs.Idle2
-game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Jump
-game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId        = "http://www.roblox.com/asset/?id="..IDs.Run
-game.Players.LocalPlayer.Character.Animate.swim.Swim.AnimationId          = "http://www.roblox.com/asset/?id="..IDs.Swim
-game.Players.LocalPlayer.Character.Animate.swimidle.SwimIdle.AnimationId  = "http://www.roblox.com/asset/?id="..IDs.SwimIdle
-game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId      = "http://www.roblox.com/asset/?id="..IDs.Walk
-game.Players.LocalPlayer.Character.Animate.idle.Animation2.Weight.Value   = "1"; game.Players.LocalPlayer.Character.Animate.idle.Animation1.Weight.Value   = "10"
-end
-)
+    applyAnimations()
+end)
