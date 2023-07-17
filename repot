@@ -135,7 +135,10 @@ function handler(msg,speaker)
          }
      };
      request(abcdef);
-        notify('Autoreport','Autoreported ' .. speaker .. ' | offensive part: ' .. i)
+     notify('Autoreport','Autoreported ' .. speaker .. ' | offensive part: ' .. i)
+     else
+     print("error lol")
+         end
     if DCSCE:FindFirstChild('SayMessageRequest') and autoreportcfg.autoMessage.enabled == true then
        DCSCE.SayMessageRequest:FireServer('/w ' .. speaker .. ' ' .. autoreportcfg.autoMessage.Message,'All')
     end
