@@ -1,0 +1,34 @@
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(
+        function(input, isTyping)
+            if isTyping then
+                return
+            elseif input.KeyCode == Enum.KeyCode.J then
+                                    pcall(
+                        function()
+      local TeleportService = game:GetService("TeleportService")
+settings().Network.IncomingReplicationLag = 0
+for i = 1,255 do
+TeleportService:TeleportToPlaceInstance(game["PlaceId"], game["JobId"])
+end
+settings().Network.IncomingReplicationLag = 0
+local CF = tostring(game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame)
+syn.queue_on_teleport(
+    string.format(
+        [[
+settings().Network.IncomingReplicationLag = 0
+game:GetService('ReplicatedFirst'):RemoveDefaultLoadingScreen()
+repeat task.wait() until game:GetService("Players") and game:GetService("Players").LocalPlayer
+local LocalPlayer = game:GetService("Players").LocalPlayer
+LocalPlayer.CharacterAdded:Wait()
+repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+    LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = CFrame.new(%s)
+    LocalPlayer.Character:WaitForChild('ForceField'):Destroy()]],
+        CF
+    )
+)
+end
+)
+end
+end
+)
