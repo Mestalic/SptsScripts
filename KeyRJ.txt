@@ -13,7 +13,7 @@ TeleportService:TeleportToPlaceInstance(game["PlaceId"], game["JobId"])
 end
 settings().Network.IncomingReplicationLag = 0
 local CF = tostring(game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame)
-syn.queue_on_teleport(
+queue_on_teleport(
     string.format(
         [[
 settings().Network.IncomingReplicationLag = 0
