@@ -22,7 +22,7 @@ repeat task.wait() until game:GetService("Players") and game:GetService("Players
 local LocalPlayer = game:GetService("Players").LocalPlayer
 LocalPlayer.CharacterAdded:Wait()
 repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-wait(0.6)
+wait(0.3)
     LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = CFrame.new(%s)
     LocalPlayer.Character:WaitForChild('ForceField'):Destroy()]],
         CF
